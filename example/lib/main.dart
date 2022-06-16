@@ -160,8 +160,11 @@ class _MyAppState extends State<MyApp> {
     print(await DocumentReader.prepareDatabase("Full"));
     setStatus("Initializing...");
     ByteData byteData = await rootBundle.load("assets/regula.license");
-    print(await DocumentReader.initializeReader(base64.encode(byteData.buffer
-        .asUint8List(byteData.offsetInBytes, byteData.lengthInBytes))));
+    print(await DocumentReader.initializeReader({
+      "license": base64.encode(byteData.buffer
+          .asUint8List(byteData.offsetInBytes, byteData.lengthInBytes)),
+      "licenseUpdate": true
+    }));
     setStatus("Ready");
     bool canRfid = await DocumentReader.isRFIDAvailableForUse();
     setState(() => _canRfid = canRfid);

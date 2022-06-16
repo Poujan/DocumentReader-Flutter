@@ -7282,8 +7282,8 @@ class DocumentReader {
     return await _channel.invokeMethod("setRfidScenario", [scenario]);
   }
 
-  static Future<dynamic> initializeReader(license) async {
-    return await _channel.invokeMethod("initializeReader", [license]);
+  static Future<dynamic> initializeReader(config) async {
+    return await _channel.invokeMethod("initializeReader", [config]);
   }
 
   static Future<dynamic> prepareDatabase(databaseType) async {
@@ -7316,10 +7316,6 @@ class DocumentReader {
 
   static Future<dynamic> setTCCParams(params) async {
     return await _channel.invokeMethod("setTCCParams", [params]);
-  }
-
-  static Future<dynamic> initializeReaderWithDatabase(license, db) async {
-    return await _channel.invokeMethod("initializeReaderWithDatabase", [license, db]);
   }
 
   static Future<dynamic> recognizeImageWithOpts(image, options) async {
