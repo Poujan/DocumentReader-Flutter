@@ -463,6 +463,9 @@ public class FlutterDocumentReaderApiPlugin implements FlutterPlugin, MethodCall
                 case "setTCCParams":
                     setTCCParams(callback, args(0));
                     break;
+                case "initializeReaderWithDatabase":
+                    initializeReaderWithDatabase(callback, args(0), args(1));
+                    break;
                 case "recognizeImageWithOpts":
                     recognizeImageWithOpts(callback, args(0), args(1));
                     break;
@@ -626,9 +629,16 @@ public class FlutterDocumentReaderApiPlugin implements FlutterPlugin, MethodCall
         callback.success(Instance().isRFIDAvailableForUse());
     }
 
-    private void initializeReader(Callback callback, JSONObject config) {
+    private void initializeReader(Callback callback, Object license) {
         if (!Instance().isReady())
-            Instance().initializeReader(getContext(), JSONConstructor.DocReaderConfigFromJSON(config), getInitCompletion(callback));
+            Instance().initializeReader(getContext(), new DocReaderConfig(Base64.decode(license.toString(), Base64.DEFAULT)), getInitCompletion(callback));
+        else
+            callback.success("already initialized");
+    }
+
+    private void initializeReaderWithDatabase(Callback callback, Object license, Object db) {
+        if (!Instance().isReady())
+            Instance().initializeReader(getContext(), new DocReaderConfig(Base64.decode(license.toString(), Base64.DEFAULT), Base64.decode(db.toString(), Base64.DEFAULT)), getInitCompletion(callback));
         else
             callback.success("already initialized");
     }
