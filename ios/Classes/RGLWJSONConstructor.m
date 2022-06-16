@@ -35,6 +35,33 @@
     return [[RGLTCCParams alloc] initWithServiceTAURLString:serviceTAURLString servicePAURLString:servicePAURLString pfxCertURLString:pfxCertURLString pfxCertData: pfxCertData pfxPassPhrase:pfxPassPhrase];
 }
 
++(RGLConfig*)RGLConfigFromJson:(NSDictionary*)input {
+    NSData* license;
+    if([input valueForKey:@"license"] != nil)
+        license = [[NSData alloc] initWithBase64EncodedString:[input valueForKey:@"license"] options:0];
+    else return nil;
+    BOOL secondConstructor = false;
+    NSString* databasePath = nil;
+    BOOL licenseUpdate = nil;
+    BOOL delayedNNLoad = nil;
+    if([input valueForKey:@"databasePath"] != nil){
+        databasePath = [input valueForKey:@"databasePath"];
+        secondConstructor = true;
+    }
+    if([input valueForKey:@"licenseUpdate"] != nil){
+        licenseUpdate = [input valueForKey:@"licenseUpdate"];
+        secondConstructor = true;
+    }
+    if([input valueForKey:@"delayedNNLoad"] != nil){
+        delayedNNLoad = [input valueForKey:@"delayedNNLoad"];
+        secondConstructor = true;
+    }
+
+    if(secondConstructor)
+        return [[RGLConfig alloc] initWithLicenseData:license licenseUpdateCheck:licenseUpdate databasePath:databasePath delayedNNLoadEnabled:delayedNNLoad];
+    return [[RGLConfig alloc] initWithLicenseData:license];
+}
+
 +(RGLImageInput*)RGLImageInputFromJson:(NSDictionary*)input {
     NSInteger pageIndex = 0;
     if([input valueForKey:@"pageIndex"] != nil)
