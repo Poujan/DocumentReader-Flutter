@@ -43,20 +43,17 @@
 
     RGLConfig *config = [[RGLConfig alloc] initWithLicenseData:license];
 
-    NSString* databasePath = nil;
-    BOOL licenseUpdate = nil;
-    BOOL delayedNNLoad = nil;
     if([input valueForKey:@"databasePath"] != nil){
         config.databasePath = [[input valueForKey:@"databasePath"] stringValue];
     }
     if([input valueForKey:@"licenseUpdate"] != nil){
-        config.licenseUpdate = [[input valueForKey:@"licenseUpdate"] boolValue];
+        config.licenseUpdateCheck = [[input valueForKey:@"licenseUpdate"] boolValue];
     }
     if([input valueForKey:@"delayedNNLoad"] != nil){
-        config.delayedNNLoad = [[input valueForKey:@"delayedNNLoad"] boolValue];
+        config.delayedNNLoadEnabled = [[input valueForKey:@"delayedNNLoad"] boolValue];
     }
 
-    return config
+    return config;
 }
 
 +(RGLImageInput*)RGLImageInputFromJson:(NSDictionary*)input {
