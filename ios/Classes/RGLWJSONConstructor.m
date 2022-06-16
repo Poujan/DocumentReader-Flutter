@@ -40,26 +40,23 @@
     if([input valueForKey:@"license"] != nil)
         license = [[NSData alloc] initWithBase64EncodedString:[input valueForKey:@"license"] options:0];
     else return nil;
-    BOOL secondConstructor = false;
+
+    RGLConfig *config = [[RGLConfig alloc] initWithLicenseData:license];
+
     NSString* databasePath = nil;
     BOOL licenseUpdate = nil;
     BOOL delayedNNLoad = nil;
     if([input valueForKey:@"databasePath"] != nil){
-        databasePath = [input valueForKey:@"databasePath"];
-        secondConstructor = true;
+        config.databasePath = [[input valueForKey:@"databasePath"] stringValue];
     }
     if([input valueForKey:@"licenseUpdate"] != nil){
-        licenseUpdate = [input valueForKey:@"licenseUpdate"];
-        secondConstructor = true;
+        config.licenseUpdate = [[input valueForKey:@"licenseUpdate"] boolValue];
     }
     if([input valueForKey:@"delayedNNLoad"] != nil){
-        delayedNNLoad = [input valueForKey:@"delayedNNLoad"];
-        secondConstructor = true;
+        config.delayedNNLoad = [[input valueForKey:@"delayedNNLoad"] boolValue];
     }
 
-    if(secondConstructor)
-        return [[RGLConfig alloc] initWithLicenseData:license licenseUpdateCheck:licenseUpdate databasePath:databasePath delayedNNLoadEnabled:delayedNNLoad];
-    return [[RGLConfig alloc] initWithLicenseData:license];
+    return config
 }
 
 +(RGLImageInput*)RGLImageInputFromJson:(NSDictionary*)input {
