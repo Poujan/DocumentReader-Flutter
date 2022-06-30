@@ -104,6 +104,8 @@ class _MyAppState extends State<MyApp> {
     }
     else
       this.handleResults(completion.results);
+    if (completion.action == DocReaderAction.TIMEOUT)
+      this.handleResults(completion.results);
   }
 
   void showRfidUI() {
@@ -228,20 +230,6 @@ class _MyAppState extends State<MyApp> {
 
   void handleResults(DocumentReaderResults results) {
     if (_doRfid && results != null && results.chipPage != 0) {
-      String accessKey =
-          results.getTextFieldValueByType(eVisualFieldType.FT_MRZ_STRINGS);
-      if (accessKey != null && accessKey != "")
-        DocumentReader.setRfidScenario({
-          "mrz": accessKey.replaceAll('^', '').replaceAll('\n', ''),
-          "pacePasswordType": eRFID_Password_Type.PPT_MRZ
-        });
-      else if (results.getTextFieldValueByType(159) != null &&
-          results.getTextFieldValueByType(159) != "")
-        DocumentReader.setRfidScenario({
-          "password": results.getTextFieldValueByType(159),
-          "pacePasswordType": eRFID_Password_Type.PPT_CAN
-        });
-
       // customRFID();
       usualRFID();
     } else
