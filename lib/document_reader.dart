@@ -20,13 +20,13 @@ class DocumentReaderScenario {
   }
 
   Map toJson(){
-    Map result = {};
+    Map _result = {};
 
-    if (name != null) result.addAll({"name": name});
-    if (caption != null) result.addAll({"caption": caption});
-    if (description != null) result.addAll({"description": description});
+    if (name != null) _result.addAll({"name": name});
+    if (caption != null) _result.addAll({"caption": caption});
+    if (description != null) _result.addAll({"description": description});
 
-    return result;
+    return _result;
   }
 }
 
@@ -67,28 +67,28 @@ class CoreDetailedScenario {
   }
 
   Map toJson(){
-    Map result = {};
+    Map _result = {};
 
-    if (uvTorch != null) result.addAll({"uvTorch": uvTorch});
-    if (frameOrientation != null) result.addAll({"frameOrientation": frameOrientation});
-    if (faceExt != null) result.addAll({"faceExt": faceExt});
-    if (multiPageOff != null) result.addAll({"multiPageOff": multiPageOff});
-    if (seriesProcessMode != null) result.addAll({"seriesProcessMode": seriesProcessMode});
-    if (frameKWHLandscape != null) result.addAll({"frameKWHLandscape": frameKWHLandscape});
-    if (frameKWHPortrait != null) result.addAll({"frameKWHPortrait": frameKWHPortrait});
-    if (frameKWHDoublePageSpreadPortrait != null) result.addAll({"frameKWHDoublePageSpreadPortrait": frameKWHDoublePageSpreadPortrait});
-    if (frameKWHDoublePageSpreadLandscape != null) result.addAll({"frameKWHDoublePageSpreadLandscape": frameKWHDoublePageSpreadLandscape});
-    if (name != null) result.addAll({"name": name});
-    if (caption != null) result.addAll({"caption": caption});
-    if (description != null) result.addAll({"description": description});
-    if (manualCrop != null) result.addAll({"manualCrop": manualCrop});
+    if (uvTorch != null) _result.addAll({"uvTorch": uvTorch});
+    if (frameOrientation != null) _result.addAll({"frameOrientation": frameOrientation});
+    if (faceExt != null) _result.addAll({"faceExt": faceExt});
+    if (multiPageOff != null) _result.addAll({"multiPageOff": multiPageOff});
+    if (seriesProcessMode != null) _result.addAll({"seriesProcessMode": seriesProcessMode});
+    if (frameKWHLandscape != null) _result.addAll({"frameKWHLandscape": frameKWHLandscape});
+    if (frameKWHPortrait != null) _result.addAll({"frameKWHPortrait": frameKWHPortrait});
+    if (frameKWHDoublePageSpreadPortrait != null) _result.addAll({"frameKWHDoublePageSpreadPortrait": frameKWHDoublePageSpreadPortrait});
+    if (frameKWHDoublePageSpreadLandscape != null) _result.addAll({"frameKWHDoublePageSpreadLandscape": frameKWHDoublePageSpreadLandscape});
+    if (name != null) _result.addAll({"name": name});
+    if (caption != null) _result.addAll({"caption": caption});
+    if (description != null) _result.addAll({"description": description});
+    if (manualCrop != null) _result.addAll({"manualCrop": manualCrop});
 
-    return result;
+    return _result;
   }
 }
 
 class FaceMetaData {
-  int? ID;
+  int? iD;
   int? rollAngle;
   Bounds? bounds;
 
@@ -96,7 +96,7 @@ class FaceMetaData {
     if (jsonObject == null) return null;
     var result = new FaceMetaData();
 
-    result.ID = jsonObject["ID"];
+    result.iD = jsonObject["ID"];
     result.rollAngle = jsonObject["rollAngle"];
     result.bounds = Bounds.fromJson(jsonObject["bounds"]);
 
@@ -104,13 +104,13 @@ class FaceMetaData {
   }
 
   Map toJson(){
-    Map result = {};
+    Map _result = {};
 
-    if (ID != null) result.addAll({"ID": ID});
-    if (rollAngle != null) result.addAll({"rollAngle": rollAngle});
-    if (bounds != null) result.addAll({"bounds": bounds});
+    if (iD != null) _result.addAll({"ID": iD});
+    if (rollAngle != null) _result.addAll({"rollAngle": rollAngle});
+    if (bounds != null) _result.addAll({"bounds": bounds});
 
-    return result;
+    return _result;
   }
 }
 
@@ -133,14 +133,14 @@ class Bounds {
   }
 
   Map toJson(){
-    Map result = {};
+    Map _result = {};
 
-    if (x != null) result.addAll({"x": x});
-    if (y != null) result.addAll({"y": y});
-    if (width != null) result.addAll({"width": width});
-    if (height != null) result.addAll({"height": height});
+    if (x != null) _result.addAll({"x": x});
+    if (y != null) _result.addAll({"y": y});
+    if (width != null) _result.addAll({"width": width});
+    if (height != null) _result.addAll({"height": height});
 
-    return result;
+    return _result;
   }
 }
 
@@ -163,14 +163,14 @@ class Rect {
   }
 
   Map toJson(){
-    Map result = {};
+    Map _result = {};
 
-    if (bottom != null) result.addAll({"bottom": bottom});
-    if (top != null) result.addAll({"top": top});
-    if (left != null) result.addAll({"left": left});
-    if (right != null) result.addAll({"right": right});
+    if (bottom != null) _result.addAll({"bottom": bottom});
+    if (top != null) _result.addAll({"top": top});
+    if (left != null) _result.addAll({"left": left});
+    if (right != null) _result.addAll({"right": right});
 
-    return result;
+    return _result;
   }
 }
 
@@ -193,14 +193,14 @@ class DocReaderFieldRect {
   }
 
   Map toJson(){
-    Map result = {};
+    Map _result = {};
 
-    if (bottom != null) result.addAll({"bottom": bottom});
-    if (top != null) result.addAll({"top": top});
-    if (left != null) result.addAll({"left": left});
-    if (right != null) result.addAll({"right": right});
+    if (bottom != null) _result.addAll({"bottom": bottom});
+    if (top != null) _result.addAll({"top": top});
+    if (left != null) _result.addAll({"left": left});
+    if (right != null) _result.addAll({"right": right});
 
-    return result;
+    return _result;
   }
 }
 
@@ -231,18 +231,18 @@ class DocumentReaderGraphicField {
   }
 
   Map toJson(){
-    Map result = {};
+    Map _result = {};
 
-    if (sourceType != null) result.addAll({"sourceType": sourceType});
-    if (fieldType != null) result.addAll({"fieldType": fieldType});
-    if (lightType != null) result.addAll({"lightType": lightType});
-    if (pageIndex != null) result.addAll({"pageIndex": pageIndex});
-    if (fieldName != null) result.addAll({"fieldName": fieldName});
-    if (lightName != null) result.addAll({"lightName": lightName});
-    if (value != null) result.addAll({"value": value});
-    if (fieldRect != null) result.addAll({"fieldRect": fieldRect});
+    if (sourceType != null) _result.addAll({"sourceType": sourceType});
+    if (fieldType != null) _result.addAll({"fieldType": fieldType});
+    if (lightType != null) _result.addAll({"lightType": lightType});
+    if (pageIndex != null) _result.addAll({"pageIndex": pageIndex});
+    if (fieldName != null) _result.addAll({"fieldName": fieldName});
+    if (lightName != null) _result.addAll({"lightName": lightName});
+    if (value != null) _result.addAll({"value": value});
+    if (fieldRect != null) _result.addAll({"fieldRect": fieldRect});
 
-    return result;
+    return _result;
   }
 }
 
@@ -261,11 +261,11 @@ class DocumentReaderGraphicResult {
   }
 
   Map toJson(){
-    Map result = {};
+    Map _result = {};
 
-    if (fields != null) result.addAll({"fields": fields});
+    _result.addAll({"fields": fields});
 
-    return result;
+    return _result;
   }
 }
 
@@ -297,18 +297,18 @@ class DocumentReaderValue {
   }
 
   Map toJson(){
-    Map result = {};
+    Map _result = {};
 
-    if (pageIndex != null) result.addAll({"pageIndex": pageIndex});
-    if (sourceType != null) result.addAll({"sourceType": sourceType});
-    if (validity != null) result.addAll({"validity": validity});
-    if (probability != null) result.addAll({"probability": probability});
-    if (value != null) result.addAll({"value": value});
-    if (originalValue != null) result.addAll({"originalValue": originalValue});
-    if (boundRect != null) result.addAll({"boundRect": boundRect});
-    if (comparison != null) result.addAll({"comparison": comparison});
+    if (pageIndex != null) _result.addAll({"pageIndex": pageIndex});
+    if (sourceType != null) _result.addAll({"sourceType": sourceType});
+    if (validity != null) _result.addAll({"validity": validity});
+    if (probability != null) _result.addAll({"probability": probability});
+    if (value != null) _result.addAll({"value": value});
+    if (originalValue != null) _result.addAll({"originalValue": originalValue});
+    if (boundRect != null) _result.addAll({"boundRect": boundRect});
+    _result.addAll({"comparison": comparison});
 
-    return result;
+    return _result;
   }
 }
 
@@ -339,17 +339,17 @@ class DocumentReaderTextField {
   }
 
   Map toJson(){
-    Map result = {};
+    Map _result = {};
 
-    if (fieldType != null) result.addAll({"fieldType": fieldType});
-    if (lcid != null) result.addAll({"lcid": lcid});
-    if (status != null) result.addAll({"status": status});
-    if (lcidName != null) result.addAll({"lcidName": lcidName});
-    if (fieldName != null) result.addAll({"fieldName": fieldName});
-    if (value != null) result.addAll({"value": value});
-    if (values != null) result.addAll({"values": values});
+    if (fieldType != null) _result.addAll({"fieldType": fieldType});
+    if (lcid != null) _result.addAll({"lcid": lcid});
+    if (status != null) _result.addAll({"status": status});
+    if (lcidName != null) _result.addAll({"lcidName": lcidName});
+    if (fieldName != null) _result.addAll({"fieldName": fieldName});
+    if (value != null) _result.addAll({"value": value});
+    _result.addAll({"values": values});
 
-    return result;
+    return _result;
   }
 }
 
@@ -370,12 +370,12 @@ class DocumentReaderTextResult {
   }
 
   Map toJson(){
-    Map result = {};
+    Map _result = {};
 
-    if (status != null) result.addAll({"status": status});
-    if (fields != null) result.addAll({"fields": fields});
+    if (status != null) _result.addAll({"status": status});
+    _result.addAll({"fields": fields});
 
-    return result;
+    return _result;
   }
 }
 
@@ -394,12 +394,12 @@ class Coordinate {
   }
 
   Map toJson(){
-    Map result = {};
+    Map _result = {};
 
-    if (x != null) result.addAll({"x": x});
-    if (y != null) result.addAll({"y": y});
+    if (x != null) _result.addAll({"x": x});
+    if (y != null) _result.addAll({"y": y});
 
-    return result;
+    return _result;
   }
 }
 
@@ -446,26 +446,26 @@ class ElementPosition {
   }
 
   Map toJson(){
-    Map result = {};
+    Map _result = {};
 
-    if (docFormat != null) result.addAll({"docFormat": docFormat});
-    if (width != null) result.addAll({"width": width});
-    if (height != null) result.addAll({"height": height});
-    if (dpi != null) result.addAll({"dpi": dpi});
-    if (pageIndex != null) result.addAll({"pageIndex": pageIndex});
-    if (inverse != null) result.addAll({"inverse": inverse});
-    if (perspectiveTr != null) result.addAll({"perspectiveTr": perspectiveTr});
-    if (objArea != null) result.addAll({"objArea": objArea});
-    if (objIntAngleDev != null) result.addAll({"objIntAngleDev": objIntAngleDev});
-    if (resultStatus != null) result.addAll({"resultStatus": resultStatus});
-    if (angle != null) result.addAll({"angle": angle});
-    if (center != null) result.addAll({"center": center});
-    if (leftTop != null) result.addAll({"leftTop": leftTop});
-    if (leftBottom != null) result.addAll({"leftBottom": leftBottom});
-    if (rightTop != null) result.addAll({"rightTop": rightTop});
-    if (rightBottom != null) result.addAll({"rightBottom": rightBottom});
+    if (docFormat != null) _result.addAll({"docFormat": docFormat});
+    if (width != null) _result.addAll({"width": width});
+    if (height != null) _result.addAll({"height": height});
+    if (dpi != null) _result.addAll({"dpi": dpi});
+    if (pageIndex != null) _result.addAll({"pageIndex": pageIndex});
+    if (inverse != null) _result.addAll({"inverse": inverse});
+    if (perspectiveTr != null) _result.addAll({"perspectiveTr": perspectiveTr});
+    if (objArea != null) _result.addAll({"objArea": objArea});
+    if (objIntAngleDev != null) _result.addAll({"objIntAngleDev": objIntAngleDev});
+    if (resultStatus != null) _result.addAll({"resultStatus": resultStatus});
+    if (angle != null) _result.addAll({"angle": angle});
+    if (center != null) _result.addAll({"center": center});
+    if (leftTop != null) _result.addAll({"leftTop": leftTop});
+    if (leftBottom != null) _result.addAll({"leftBottom": leftBottom});
+    if (rightTop != null) _result.addAll({"rightTop": rightTop});
+    if (rightBottom != null) _result.addAll({"rightBottom": rightBottom});
 
-    return result;
+    return _result;
   }
 }
 
@@ -486,13 +486,13 @@ class ImageQuality {
   }
 
   Map toJson(){
-    Map result = {};
+    Map _result = {};
 
-    if (featureType != null) result.addAll({"featureType": featureType});
-    if (result != null) result.addAll({"result": result});
-    if (type != null) result.addAll({"type": type});
+    if (featureType != null) _result.addAll({"featureType": featureType});
+    if (result != null) _result.addAll({"result": result});
+    if (type != null) _result.addAll({"type": type});
 
-    return result;
+    return _result;
   }
 }
 
@@ -517,14 +517,14 @@ class ImageQualityGroup {
   }
 
   Map toJson(){
-    Map result = {};
+    Map _result = {};
 
-    if (count != null) result.addAll({"count": count});
-    if (result != null) result.addAll({"result": result});
-    if (imageQualityList != null) result.addAll({"imageQualityList": imageQualityList});
-    if (pageIndex != null) result.addAll({"pageIndex": pageIndex});
+    if (count != null) _result.addAll({"count": count});
+    if (result != null) _result.addAll({"result": result});
+    _result.addAll({"imageQualityList": imageQualityList});
+    if (pageIndex != null) _result.addAll({"pageIndex": pageIndex});
 
-    return result;
+    return _result;
   }
 }
 
@@ -535,11 +535,11 @@ class DocumentReaderDocumentType {
   int? dFormat;
   bool? dMRZ;
   String? name;
-  String? ICAOCode;
+  String? iCAOCode;
   String? dDescription;
   String? dYear;
   String? dCountryName;
-  List<int?> FDSID = [];
+  List<int?> fDSID = [];
 
   static DocumentReaderDocumentType? fromJson(jsonObject) {
     if (jsonObject == null) return null;
@@ -551,33 +551,33 @@ class DocumentReaderDocumentType {
     result.dFormat = jsonObject["dFormat"];
     result.dMRZ = jsonObject["dMRZ"];
     result.name = jsonObject["name"];
-    result.ICAOCode = jsonObject["ICAOCode"];
+    result.iCAOCode = jsonObject["ICAOCode"];
     result.dDescription = jsonObject["dDescription"];
     result.dYear = jsonObject["dYear"];
     result.dCountryName = jsonObject["dCountryName"];
     if (jsonObject["FDSID"] != null)
       for (var item in jsonObject["FDSID"])
-        result.FDSID.add(item);
+        result.fDSID.add(item);
 
     return result;
   }
 
   Map toJson(){
-    Map result = {};
+    Map _result = {};
 
-    if (pageIndex != null) result.addAll({"pageIndex": pageIndex});
-    if (documentID != null) result.addAll({"documentID": documentID});
-    if (dType != null) result.addAll({"dType": dType});
-    if (dFormat != null) result.addAll({"dFormat": dFormat});
-    if (dMRZ != null) result.addAll({"dMRZ": dMRZ});
-    if (name != null) result.addAll({"name": name});
-    if (ICAOCode != null) result.addAll({"ICAOCode": ICAOCode});
-    if (dDescription != null) result.addAll({"dDescription": dDescription});
-    if (dYear != null) result.addAll({"dYear": dYear});
-    if (dCountryName != null) result.addAll({"dCountryName": dCountryName});
-    if (FDSID != null) result.addAll({"FDSID": FDSID});
+    if (pageIndex != null) _result.addAll({"pageIndex": pageIndex});
+    if (documentID != null) _result.addAll({"documentID": documentID});
+    if (dType != null) _result.addAll({"dType": dType});
+    if (dFormat != null) _result.addAll({"dFormat": dFormat});
+    if (dMRZ != null) _result.addAll({"dMRZ": dMRZ});
+    if (name != null) _result.addAll({"name": name});
+    if (iCAOCode != null) _result.addAll({"ICAOCode": iCAOCode});
+    if (dDescription != null) _result.addAll({"dDescription": dDescription});
+    if (dYear != null) _result.addAll({"dYear": dYear});
+    if (dCountryName != null) _result.addAll({"dCountryName": dCountryName});
+    _result.addAll({"FDSID": fDSID});
 
-    return result;
+    return _result;
   }
 }
 
@@ -598,13 +598,13 @@ class DocumentReaderNotification {
   }
 
   Map toJson(){
-    Map result = {};
+    Map _result = {};
 
-    if (code != null) result.addAll({"code": code});
-    if (attachment != null) result.addAll({"attachment": attachment});
-    if (value != null) result.addAll({"value": value});
+    if (code != null) _result.addAll({"code": code});
+    if (attachment != null) _result.addAll({"attachment": attachment});
+    if (value != null) _result.addAll({"value": value});
 
-    return result;
+    return _result;
   }
 }
 
@@ -629,14 +629,14 @@ class AccessControlProcedureType {
   }
 
   Map toJson(){
-    Map result = {};
+    Map _result = {};
 
-    if (activeOptionIdx != null) result.addAll({"activeOptionIdx": activeOptionIdx});
-    if (type != null) result.addAll({"type": type});
-    if (status != null) result.addAll({"status": status});
-    if (notifications != null) result.addAll({"notifications": notifications});
+    if (activeOptionIdx != null) _result.addAll({"activeOptionIdx": activeOptionIdx});
+    if (type != null) _result.addAll({"type": type});
+    if (status != null) _result.addAll({"status": status});
+    _result.addAll({"notifications": notifications});
 
-    return result;
+    return _result;
   }
 }
 
@@ -659,14 +659,14 @@ class FileData {
   }
 
   Map toJson(){
-    Map result = {};
+    Map _result = {};
 
-    if (length != null) result.addAll({"length": length});
-    if (type != null) result.addAll({"type": type});
-    if (status != null) result.addAll({"status": status});
-    if (data != null) result.addAll({"data": data});
+    if (length != null) _result.addAll({"length": length});
+    if (type != null) _result.addAll({"type": type});
+    if (status != null) _result.addAll({"status": status});
+    if (data != null) _result.addAll({"data": data});
 
-    return result;
+    return _result;
   }
 }
 
@@ -685,12 +685,12 @@ class CertificateData {
   }
 
   Map toJson(){
-    Map result = {};
+    Map _result = {};
 
-    if (length != null) result.addAll({"length": length});
-    if (data != null) result.addAll({"data": data});
+    if (length != null) _result.addAll({"length": length});
+    if (data != null) _result.addAll({"data": data});
 
-    return result;
+    return _result;
   }
 }
 
@@ -707,11 +707,11 @@ class SecurityObjectCertificates {
   }
 
   Map toJson(){
-    Map result = {};
+    Map _result = {};
 
-    if (securityObject != null) result.addAll({"securityObject": securityObject});
+    if (securityObject != null) _result.addAll({"securityObject": securityObject});
 
-    return result;
+    return _result;
   }
 }
 
@@ -756,21 +756,21 @@ class File {
   }
 
   Map toJson(){
-    Map result = {};
+    Map _result = {};
 
-    if (readingTime != null) result.addAll({"readingTime": readingTime});
-    if (type != null) result.addAll({"type": type});
-    if (pAStatus != null) result.addAll({"pAStatus": pAStatus});
-    if (readingStatus != null) result.addAll({"readingStatus": readingStatus});
-    if (fileID != null) result.addAll({"fileID": fileID});
-    if (fileData != null) result.addAll({"fileData": fileData});
-    if (certificates != null) result.addAll({"certificates": certificates});
-    if (docFieldsText != null) result.addAll({"docFieldsText": docFieldsText});
-    if (docFieldsGraphics != null) result.addAll({"docFieldsGraphics": docFieldsGraphics});
-    if (docFieldsOriginals != null) result.addAll({"docFieldsOriginals": docFieldsOriginals});
-    if (notifications != null) result.addAll({"notifications": notifications});
+    if (readingTime != null) _result.addAll({"readingTime": readingTime});
+    if (type != null) _result.addAll({"type": type});
+    if (pAStatus != null) _result.addAll({"pAStatus": pAStatus});
+    if (readingStatus != null) _result.addAll({"readingStatus": readingStatus});
+    if (fileID != null) _result.addAll({"fileID": fileID});
+    if (fileData != null) _result.addAll({"fileData": fileData});
+    if (certificates != null) _result.addAll({"certificates": certificates});
+    _result.addAll({"docFieldsText": docFieldsText});
+    _result.addAll({"docFieldsGraphics": docFieldsGraphics});
+    _result.addAll({"docFieldsOriginals": docFieldsOriginals});
+    _result.addAll({"notifications": notifications});
 
-    return result;
+    return _result;
   }
 }
 
@@ -801,17 +801,17 @@ class Application {
   }
 
   Map toJson(){
-    Map result = {};
+    Map _result = {};
 
-    if (type != null) result.addAll({"type": type});
-    if (status != null) result.addAll({"status": status});
-    if (applicationID != null) result.addAll({"applicationID": applicationID});
-    if (dataHashAlgorithm != null) result.addAll({"dataHashAlgorithm": dataHashAlgorithm});
-    if (unicodeVersion != null) result.addAll({"unicodeVersion": unicodeVersion});
-    if (version != null) result.addAll({"version": version});
-    if (files != null) result.addAll({"files": files});
+    if (type != null) _result.addAll({"type": type});
+    if (status != null) _result.addAll({"status": status});
+    if (applicationID != null) _result.addAll({"applicationID": applicationID});
+    if (dataHashAlgorithm != null) _result.addAll({"dataHashAlgorithm": dataHashAlgorithm});
+    if (unicodeVersion != null) _result.addAll({"unicodeVersion": unicodeVersion});
+    if (version != null) _result.addAll({"version": version});
+    _result.addAll({"files": files});
 
-    return result;
+    return _result;
   }
 }
 
@@ -836,15 +836,15 @@ class Value {
   }
 
   Map toJson(){
-    Map result = {};
+    Map _result = {};
 
-    if (length != null) result.addAll({"length": length});
-    if (type != null) result.addAll({"type": type});
-    if (status != null) result.addAll({"status": status});
-    if (data != null) result.addAll({"data": data});
-    if (format != null) result.addAll({"format": format});
+    if (length != null) _result.addAll({"length": length});
+    if (type != null) _result.addAll({"type": type});
+    if (status != null) _result.addAll({"status": status});
+    if (data != null) _result.addAll({"data": data});
+    if (format != null) _result.addAll({"format": format});
 
-    return result;
+    return _result;
   }
 }
 
@@ -863,12 +863,12 @@ class Attribute {
   }
 
   Map toJson(){
-    Map result = {};
+    Map _result = {};
 
-    if (type != null) result.addAll({"type": type});
-    if (value != null) result.addAll({"value": value});
+    if (type != null) _result.addAll({"type": type});
+    if (value != null) _result.addAll({"value": value});
 
-    return result;
+    return _result;
   }
 }
 
@@ -891,13 +891,13 @@ class Authority {
   }
 
   Map toJson(){
-    Map result = {};
+    Map _result = {};
 
-    if (data != null) result.addAll({"data": data});
-    if (friendlyName != null) result.addAll({"friendlyName": friendlyName});
-    if (attributes != null) result.addAll({"attributes": attributes});
+    if (data != null) _result.addAll({"data": data});
+    if (friendlyName != null) _result.addAll({"friendlyName": friendlyName});
+    _result.addAll({"attributes": attributes});
 
-    return result;
+    return _result;
   }
 }
 
@@ -916,12 +916,12 @@ class Extension {
   }
 
   Map toJson(){
-    Map result = {};
+    Map _result = {};
 
-    if (data != null) result.addAll({"data": data});
-    if (type != null) result.addAll({"type": type});
+    if (data != null) _result.addAll({"data": data});
+    if (type != null) _result.addAll({"type": type});
 
-    return result;
+    return _result;
   }
 }
 
@@ -940,12 +940,12 @@ class Validity {
   }
 
   Map toJson(){
-    Map result = {};
+    Map _result = {};
 
-    if (notAfter != null) result.addAll({"notAfter": notAfter});
-    if (notBefore != null) result.addAll({"notBefore": notBefore});
+    if (notAfter != null) _result.addAll({"notAfter": notAfter});
+    if (notBefore != null) _result.addAll({"notBefore": notBefore});
 
-    return result;
+    return _result;
   }
 }
 
@@ -990,23 +990,23 @@ class CertificateChain {
   }
 
   Map toJson(){
-    Map result = {};
+    Map _result = {};
 
-    if (origin != null) result.addAll({"origin": origin});
-    if (type != null) result.addAll({"type": type});
-    if (version != null) result.addAll({"version": version});
-    if (paStatus != null) result.addAll({"paStatus": paStatus});
-    if (serialNumber != null) result.addAll({"serialNumber": serialNumber});
-    if (signatureAlgorithm != null) result.addAll({"signatureAlgorithm": signatureAlgorithm});
-    if (subjectPKAlgorithm != null) result.addAll({"subjectPKAlgorithm": subjectPKAlgorithm});
-    if (fileName != null) result.addAll({"fileName": fileName});
-    if (validity != null) result.addAll({"validity": validity});
-    if (issuer != null) result.addAll({"issuer": issuer});
-    if (subject != null) result.addAll({"subject": subject});
-    if (notifications != null) result.addAll({"notifications": notifications});
-    if (extensions != null) result.addAll({"extensions": extensions});
+    if (origin != null) _result.addAll({"origin": origin});
+    if (type != null) _result.addAll({"type": type});
+    if (version != null) _result.addAll({"version": version});
+    if (paStatus != null) _result.addAll({"paStatus": paStatus});
+    if (serialNumber != null) _result.addAll({"serialNumber": serialNumber});
+    if (signatureAlgorithm != null) _result.addAll({"signatureAlgorithm": signatureAlgorithm});
+    if (subjectPKAlgorithm != null) _result.addAll({"subjectPKAlgorithm": subjectPKAlgorithm});
+    if (fileName != null) _result.addAll({"fileName": fileName});
+    if (validity != null) _result.addAll({"validity": validity});
+    if (issuer != null) _result.addAll({"issuer": issuer});
+    if (subject != null) _result.addAll({"subject": subject});
+    _result.addAll({"notifications": notifications});
+    _result.addAll({"extensions": extensions});
 
-    return result;
+    return _result;
   }
 }
 
@@ -1051,22 +1051,22 @@ class SignerInfo {
   }
 
   Map toJson(){
-    Map result = {};
+    Map _result = {};
 
-    if (version != null) result.addAll({"version": version});
-    if (paStatus != null) result.addAll({"paStatus": paStatus});
-    if (dataToHash != null) result.addAll({"dataToHash": dataToHash});
-    if (digestAlgorithm != null) result.addAll({"digestAlgorithm": digestAlgorithm});
-    if (signatureAlgorithm != null) result.addAll({"signatureAlgorithm": signatureAlgorithm});
-    if (serialNumber != null) result.addAll({"serialNumber": serialNumber});
-    if (signature != null) result.addAll({"signature": signature});
-    if (subjectKeyIdentifier != null) result.addAll({"subjectKeyIdentifier": subjectKeyIdentifier});
-    if (issuer != null) result.addAll({"issuer": issuer});
-    if (notifications != null) result.addAll({"notifications": notifications});
-    if (signedAttributes != null) result.addAll({"signedAttributes": signedAttributes});
-    if (certificateChain != null) result.addAll({"certificateChain": certificateChain});
+    if (version != null) _result.addAll({"version": version});
+    if (paStatus != null) _result.addAll({"paStatus": paStatus});
+    if (dataToHash != null) _result.addAll({"dataToHash": dataToHash});
+    if (digestAlgorithm != null) _result.addAll({"digestAlgorithm": digestAlgorithm});
+    if (signatureAlgorithm != null) _result.addAll({"signatureAlgorithm": signatureAlgorithm});
+    if (serialNumber != null) _result.addAll({"serialNumber": serialNumber});
+    if (signature != null) _result.addAll({"signature": signature});
+    if (subjectKeyIdentifier != null) _result.addAll({"subjectKeyIdentifier": subjectKeyIdentifier});
+    if (issuer != null) _result.addAll({"issuer": issuer});
+    _result.addAll({"notifications": notifications});
+    _result.addAll({"signedAttributes": signedAttributes});
+    _result.addAll({"certificateChain": certificateChain});
 
-    return result;
+    return _result;
   }
 }
 
@@ -1095,15 +1095,15 @@ class SecurityObject {
   }
 
   Map toJson(){
-    Map result = {};
+    Map _result = {};
 
-    if (fileReference != null) result.addAll({"fileReference": fileReference});
-    if (version != null) result.addAll({"version": version});
-    if (objectType != null) result.addAll({"objectType": objectType});
-    if (notifications != null) result.addAll({"notifications": notifications});
-    if (signerInfos != null) result.addAll({"signerInfos": signerInfos});
+    if (fileReference != null) _result.addAll({"fileReference": fileReference});
+    if (version != null) _result.addAll({"version": version});
+    if (objectType != null) _result.addAll({"objectType": objectType});
+    _result.addAll({"notifications": notifications});
+    _result.addAll({"signerInfos": signerInfos});
 
-    return result;
+    return _result;
   }
 }
 
@@ -1146,24 +1146,24 @@ class CardProperties {
   }
 
   Map toJson(){
-    Map result = {};
+    Map _result = {};
 
-    if (aTQA != null) result.addAll({"aTQA": aTQA});
-    if (bitRateR != null) result.addAll({"bitRateR": bitRateR});
-    if (bitRateS != null) result.addAll({"bitRateS": bitRateS});
-    if (chipTypeA != null) result.addAll({"chipTypeA": chipTypeA});
-    if (mifareMemory != null) result.addAll({"mifareMemory": mifareMemory});
-    if (rfidType != null) result.addAll({"rfidType": rfidType});
-    if (sAK != null) result.addAll({"sAK": sAK});
-    if (support4 != null) result.addAll({"support4": support4});
-    if (supportMifare != null) result.addAll({"supportMifare": supportMifare});
-    if (aTQB != null) result.addAll({"aTQB": aTQB});
-    if (aTR != null) result.addAll({"aTR": aTR});
-    if (baudrate1 != null) result.addAll({"baudrate1": baudrate1});
-    if (baudrate2 != null) result.addAll({"baudrate2": baudrate2});
-    if (uID != null) result.addAll({"uID": uID});
+    if (aTQA != null) _result.addAll({"aTQA": aTQA});
+    if (bitRateR != null) _result.addAll({"bitRateR": bitRateR});
+    if (bitRateS != null) _result.addAll({"bitRateS": bitRateS});
+    if (chipTypeA != null) _result.addAll({"chipTypeA": chipTypeA});
+    if (mifareMemory != null) _result.addAll({"mifareMemory": mifareMemory});
+    if (rfidType != null) _result.addAll({"rfidType": rfidType});
+    if (sAK != null) _result.addAll({"sAK": sAK});
+    if (support4 != null) _result.addAll({"support4": support4});
+    if (supportMifare != null) _result.addAll({"supportMifare": supportMifare});
+    if (aTQB != null) _result.addAll({"aTQB": aTQB});
+    if (aTR != null) _result.addAll({"aTR": aTR});
+    if (baudrate1 != null) _result.addAll({"baudrate1": baudrate1});
+    if (baudrate2 != null) _result.addAll({"baudrate2": baudrate2});
+    if (uID != null) _result.addAll({"uID": uID});
 
-    return result;
+    return _result;
   }
 }
 
@@ -1204,20 +1204,20 @@ class RFIDSessionData {
   }
 
   Map toJson(){
-    Map result = {};
+    Map _result = {};
 
-    if (totalBytesReceived != null) result.addAll({"totalBytesReceived": totalBytesReceived});
-    if (totalBytesSent != null) result.addAll({"totalBytesSent": totalBytesSent});
-    if (status != null) result.addAll({"status": status});
-    if (extLeSupport != null) result.addAll({"extLeSupport": extLeSupport});
-    if (processTime != null) result.addAll({"processTime": processTime});
-    if (cardProperties != null) result.addAll({"cardProperties": cardProperties});
-    if (sessionDataStatus != null) result.addAll({"sessionDataStatus": sessionDataStatus});
-    if (accessControls != null) result.addAll({"accessControls": accessControls});
-    if (applications != null) result.addAll({"applications": applications});
-    if (securityObjects != null) result.addAll({"securityObjects": securityObjects});
+    if (totalBytesReceived != null) _result.addAll({"totalBytesReceived": totalBytesReceived});
+    if (totalBytesSent != null) _result.addAll({"totalBytesSent": totalBytesSent});
+    if (status != null) _result.addAll({"status": status});
+    if (extLeSupport != null) _result.addAll({"extLeSupport": extLeSupport});
+    if (processTime != null) _result.addAll({"processTime": processTime});
+    if (cardProperties != null) _result.addAll({"cardProperties": cardProperties});
+    if (sessionDataStatus != null) _result.addAll({"sessionDataStatus": sessionDataStatus});
+    _result.addAll({"accessControls": accessControls});
+    _result.addAll({"applications": applications});
+    _result.addAll({"securityObjects": securityObjects});
 
-    return result;
+    return _result;
   }
 }
 
@@ -1244,15 +1244,15 @@ class DocumentReaderAuthenticityCheck {
   }
 
   Map toJson(){
-    Map result = {};
+    Map _result = {};
 
-    if (type != null) result.addAll({"type": type});
-    if (status != null) result.addAll({"status": status});
-    if (typeName != null) result.addAll({"typeName": typeName});
-    if (pageIndex != null) result.addAll({"pageIndex": pageIndex});
-    if (elements != null) result.addAll({"elements": elements});
+    if (type != null) _result.addAll({"type": type});
+    if (status != null) _result.addAll({"status": status});
+    if (typeName != null) _result.addAll({"typeName": typeName});
+    if (pageIndex != null) _result.addAll({"pageIndex": pageIndex});
+    _result.addAll({"elements": elements});
 
-    return result;
+    return _result;
   }
 }
 
@@ -1273,52 +1273,52 @@ class PDF417Info {
   }
 
   Map toJson(){
-    Map result = {};
+    Map _result = {};
 
-    if (errorLevel != null) result.addAll({"errorLevel": errorLevel});
-    if (columns != null) result.addAll({"columns": columns});
-    if (rows != null) result.addAll({"rows": rows});
+    if (errorLevel != null) _result.addAll({"errorLevel": errorLevel});
+    if (columns != null) _result.addAll({"columns": columns});
+    if (rows != null) _result.addAll({"rows": rows});
 
-    return result;
+    return _result;
   }
 }
 
 class RFIDSessionDataStatus {
-  int? AA;
-  int? BAC;
-  int? CA;
-  int? PA;
-  int? PACE;
-  int? TA;
+  int? aA;
+  int? bAC;
+  int? cA;
+  int? pA;
+  int? pACE;
+  int? tA;
   int? overallStatus;
 
   static RFIDSessionDataStatus? fromJson(jsonObject) {
     if (jsonObject == null) return null;
     var result = new RFIDSessionDataStatus();
 
-    result.AA = jsonObject["AA"];
-    result.BAC = jsonObject["BAC"];
-    result.CA = jsonObject["CA"];
-    result.PA = jsonObject["PA"];
-    result.PACE = jsonObject["PACE"];
-    result.TA = jsonObject["TA"];
+    result.aA = jsonObject["AA"];
+    result.bAC = jsonObject["BAC"];
+    result.cA = jsonObject["CA"];
+    result.pA = jsonObject["PA"];
+    result.pACE = jsonObject["PACE"];
+    result.tA = jsonObject["TA"];
     result.overallStatus = jsonObject["overallStatus"];
 
     return result;
   }
 
   Map toJson(){
-    Map result = {};
+    Map _result = {};
 
-    if (AA != null) result.addAll({"AA": AA});
-    if (BAC != null) result.addAll({"BAC": BAC});
-    if (CA != null) result.addAll({"CA": CA});
-    if (PA != null) result.addAll({"PA": PA});
-    if (PACE != null) result.addAll({"PACE": PACE});
-    if (TA != null) result.addAll({"TA": TA});
-    if (overallStatus != null) result.addAll({"overallStatus": overallStatus});
+    if (aA != null) _result.addAll({"AA": aA});
+    if (bAC != null) _result.addAll({"BAC": bAC});
+    if (cA != null) _result.addAll({"CA": cA});
+    if (pA != null) _result.addAll({"PA": pA});
+    if (pACE != null) _result.addAll({"PACE": pACE});
+    if (tA != null) _result.addAll({"TA": tA});
+    if (overallStatus != null) _result.addAll({"overallStatus": overallStatus});
 
-    return result;
+    return _result;
   }
 }
 
@@ -1337,11 +1337,11 @@ class DocumentReaderBarcodeResult {
   }
 
   Map toJson(){
-    Map result = {};
+    Map _result = {};
 
-    if (fields != null) result.addAll({"fields": fields});
+    _result.addAll({"fields": fields});
 
-    return result;
+    return _result;
   }
 }
 
@@ -1366,15 +1366,15 @@ class DocumentReaderBarcodeField {
   }
 
   Map toJson(){
-    Map result = {};
+    Map _result = {};
 
-    if (barcodeType != null) result.addAll({"barcodeType": barcodeType});
-    if (status != null) result.addAll({"status": status});
-    if (pageIndex != null) result.addAll({"pageIndex": pageIndex});
-    if (pdf417Info != null) result.addAll({"pdf417Info": pdf417Info});
-    if (data != null) result.addAll({"data": data});
+    if (barcodeType != null) _result.addAll({"barcodeType": barcodeType});
+    if (status != null) _result.addAll({"status": status});
+    if (pageIndex != null) _result.addAll({"pageIndex": pageIndex});
+    if (pdf417Info != null) _result.addAll({"pdf417Info": pdf417Info});
+    if (data != null) _result.addAll({"data": data});
 
-    return result;
+    return _result;
   }
 }
 
@@ -1395,12 +1395,12 @@ class DocumentReaderAuthenticityResult {
   }
 
   Map toJson(){
-    Map result = {};
+    Map _result = {};
 
-    if (status != null) result.addAll({"status": status});
-    if (checks != null) result.addAll({"checks": checks});
+    if (status != null) _result.addAll({"status": status});
+    _result.addAll({"checks": checks});
 
-    return result;
+    return _result;
   }
 }
 
@@ -1425,15 +1425,15 @@ class DocumentReaderAuthenticityElement {
   }
 
   Map toJson(){
-    Map result = {};
+    Map _result = {};
 
-    if (status != null) result.addAll({"status": status});
-    if (elementType != null) result.addAll({"elementType": elementType});
-    if (elementDiagnose != null) result.addAll({"elementDiagnose": elementDiagnose});
-    if (elementTypeName != null) result.addAll({"elementTypeName": elementTypeName});
-    if (elementDiagnoseName != null) result.addAll({"elementDiagnoseName": elementDiagnoseName});
+    if (status != null) _result.addAll({"status": status});
+    if (elementType != null) _result.addAll({"elementType": elementType});
+    if (elementDiagnose != null) _result.addAll({"elementDiagnose": elementDiagnose});
+    if (elementTypeName != null) _result.addAll({"elementTypeName": elementTypeName});
+    if (elementDiagnoseName != null) _result.addAll({"elementDiagnoseName": elementDiagnoseName});
 
-    return result;
+    return _result;
   }
 }
 
@@ -1454,13 +1454,13 @@ class DocumentReaderCompletion {
   }
 
   Map toJson(){
-    Map result = {};
+    Map _result = {};
 
-    if (action != null) result.addAll({"action": action});
-    if (results != null) result.addAll({"results": results});
-    if (error != null) result.addAll({"error": error});
+    if (action != null) _result.addAll({"action": action});
+    if (results != null) _result.addAll({"results": results});
+    if (error != null) _result.addAll({"error": error});
 
-    return result;
+    return _result;
   }
 }
 
@@ -1479,12 +1479,12 @@ class RfidNotificationCompletion {
   }
 
   Map toJson(){
-    Map result = {};
+    Map _result = {};
 
-    if (notification != null) result.addAll({"notification": notification});
-    if (value != null) result.addAll({"value": value});
+    if (notification != null) _result.addAll({"notification": notification});
+    if (value != null) _result.addAll({"value": value});
 
-    return result;
+    return _result;
   }
 }
 
@@ -1511,15 +1511,15 @@ class DocumentReaderException {
   }
 
   Map toJson(){
-    Map result = {};
+    Map _result = {};
 
-    if (errorCode != null) result.addAll({"errorCode": errorCode});
-    if (localizedMessage != null) result.addAll({"localizedMessage": localizedMessage});
-    if (message != null) result.addAll({"message": message});
-    if (string != null) result.addAll({"string": string});
-    if (stackTrace != null) result.addAll({"stackTrace": stackTrace});
+    if (errorCode != null) _result.addAll({"errorCode": errorCode});
+    if (localizedMessage != null) _result.addAll({"localizedMessage": localizedMessage});
+    if (message != null) _result.addAll({"message": message});
+    if (string != null) _result.addAll({"string": string});
+    _result.addAll({"stackTrace": stackTrace});
 
-    return result;
+    return _result;
   }
 }
 
@@ -1544,14 +1544,14 @@ class Throwable {
   }
 
   Map toJson(){
-    Map result = {};
+    Map _result = {};
 
-    if (localizedMessage != null) result.addAll({"localizedMessage": localizedMessage});
-    if (message != null) result.addAll({"message": message});
-    if (string != null) result.addAll({"string": string});
-    if (stackTrace != null) result.addAll({"stackTrace": stackTrace});
+    if (localizedMessage != null) _result.addAll({"localizedMessage": localizedMessage});
+    if (message != null) _result.addAll({"message": message});
+    if (string != null) _result.addAll({"string": string});
+    _result.addAll({"stackTrace": stackTrace});
 
-    return result;
+    return _result;
   }
 }
 
@@ -1578,16 +1578,16 @@ class StackTraceElement {
   }
 
   Map toJson(){
-    Map result = {};
+    Map _result = {};
 
-    if (lineNumber != null) result.addAll({"lineNumber": lineNumber});
-    if (isNativeMethod != null) result.addAll({"isNativeMethod": isNativeMethod});
-    if (className != null) result.addAll({"className": className});
-    if (fileName != null) result.addAll({"fileName": fileName});
-    if (methodName != null) result.addAll({"methodName": methodName});
-    if (string != null) result.addAll({"string": string});
+    if (lineNumber != null) _result.addAll({"lineNumber": lineNumber});
+    if (isNativeMethod != null) _result.addAll({"isNativeMethod": isNativeMethod});
+    if (className != null) _result.addAll({"className": className});
+    if (fileName != null) _result.addAll({"fileName": fileName});
+    if (methodName != null) _result.addAll({"methodName": methodName});
+    if (string != null) _result.addAll({"string": string});
 
-    return result;
+    return _result;
   }
 }
 
@@ -1608,13 +1608,13 @@ class PKDCertificate {
   }
 
   Map toJson(){
-    Map result = {};
+    Map _result = {};
 
-    if (binaryData != null) result.addAll({"binaryData": binaryData});
-    if (resourceType != null) result.addAll({"resourceType": resourceType});
-    if (privateKey != null) result.addAll({"privateKey": privateKey});
+    if (binaryData != null) _result.addAll({"binaryData": binaryData});
+    if (resourceType != null) _result.addAll({"resourceType": resourceType});
+    if (privateKey != null) _result.addAll({"privateKey": privateKey});
 
-    return result;
+    return _result;
   }
 }
 
@@ -1635,13 +1635,13 @@ class ImageInputParam {
   }
 
   Map toJson(){
-    Map result = {};
+    Map _result = {};
 
-    if (width != null) result.addAll({"width": width});
-    if (height != null) result.addAll({"height": height});
-    if (type != null) result.addAll({"type": type});
+    if (width != null) _result.addAll({"width": width});
+    if (height != null) _result.addAll({"height": height});
+    if (type != null) _result.addAll({"type": type});
 
-    return result;
+    return _result;
   }
 }
 
@@ -1664,13 +1664,13 @@ class PAResourcesIssuer {
   }
 
   Map toJson(){
-    Map result = {};
+    Map _result = {};
 
-    if (data != null) result.addAll({"data": data});
-    if (friendlyName != null) result.addAll({"friendlyName": friendlyName});
-    if (attributes != null) result.addAll({"attributes": attributes});
+    if (data != null) _result.addAll({"data": data});
+    if (friendlyName != null) _result.addAll({"friendlyName": friendlyName});
+    _result.addAll({"attributes": attributes});
 
-    return result;
+    return _result;
   }
 }
 
@@ -1689,12 +1689,12 @@ class PAAttribute {
   }
 
   Map toJson(){
-    Map result = {};
+    Map _result = {};
 
-    if (type != null) result.addAll({"type": type});
-    if (value != null) result.addAll({"value": value});
+    if (type != null) _result.addAll({"type": type});
+    if (value != null) _result.addAll({"value": value});
 
-    return result;
+    return _result;
   }
 }
 
@@ -1719,15 +1719,15 @@ class TAChallenge {
   }
 
   Map toJson(){
-    Map result = {};
+    Map _result = {};
 
-    if (data != null) result.addAll({"data": data});
-    if (auxPCD != null) result.addAll({"auxPCD": auxPCD});
-    if (challengePICC != null) result.addAll({"challengePICC": challengePICC});
-    if (hashPK != null) result.addAll({"hashPK": hashPK});
-    if (idPICC != null) result.addAll({"idPICC": idPICC});
+    if (data != null) _result.addAll({"data": data});
+    if (auxPCD != null) _result.addAll({"auxPCD": auxPCD});
+    if (challengePICC != null) _result.addAll({"challengePICC": challengePICC});
+    if (hashPK != null) _result.addAll({"hashPK": hashPK});
+    if (idPICC != null) _result.addAll({"idPICC": idPICC});
 
-    return result;
+    return _result;
   }
 }
 
@@ -1756,17 +1756,17 @@ class DocumentReaderResultsStatus {
   }
 
   Map toJson(){
-    Map result = {};
+    Map _result = {};
 
-    if (overallStatus != null) result.addAll({"overallStatus": overallStatus});
-    if (optical != null) result.addAll({"optical": optical});
-    if (detailsOptical != null) result.addAll({"detailsOptical": detailsOptical});
-    if (rfid != null) result.addAll({"rfid": rfid});
-    if (detailsRFID != null) result.addAll({"detailsRFID": detailsRFID});
-    if (portrait != null) result.addAll({"portrait": portrait});
-    if (stopList != null) result.addAll({"stopList": stopList});
+    if (overallStatus != null) _result.addAll({"overallStatus": overallStatus});
+    if (optical != null) _result.addAll({"optical": optical});
+    if (detailsOptical != null) _result.addAll({"detailsOptical": detailsOptical});
+    if (rfid != null) _result.addAll({"rfid": rfid});
+    if (detailsRFID != null) _result.addAll({"detailsRFID": detailsRFID});
+    if (portrait != null) _result.addAll({"portrait": portrait});
+    if (stopList != null) _result.addAll({"stopList": stopList});
 
-    return result;
+    return _result;
   }
 }
 
@@ -1799,19 +1799,19 @@ class DetailsOptical {
   }
 
   Map toJson(){
-    Map result = {};
+    Map _result = {};
 
-    if (overallStatus != null) result.addAll({"overallStatus": overallStatus});
-    if (mrz != null) result.addAll({"mrz": mrz});
-    if (text != null) result.addAll({"text": text});
-    if (docType != null) result.addAll({"docType": docType});
-    if (security != null) result.addAll({"security": security});
-    if (imageQA != null) result.addAll({"imageQA": imageQA});
-    if (expiry != null) result.addAll({"expiry": expiry});
-    if (vds != null) result.addAll({"vds": vds});
-    if (pagesCount != null) result.addAll({"pagesCount": pagesCount});
+    if (overallStatus != null) _result.addAll({"overallStatus": overallStatus});
+    if (mrz != null) _result.addAll({"mrz": mrz});
+    if (text != null) _result.addAll({"text": text});
+    if (docType != null) _result.addAll({"docType": docType});
+    if (security != null) _result.addAll({"security": security});
+    if (imageQA != null) _result.addAll({"imageQA": imageQA});
+    if (expiry != null) _result.addAll({"expiry": expiry});
+    if (vds != null) _result.addAll({"vds": vds});
+    if (pagesCount != null) _result.addAll({"pagesCount": pagesCount});
 
-    return result;
+    return _result;
   }
 }
 
@@ -1840,17 +1840,17 @@ class DetailsRFID {
   }
 
   Map toJson(){
-    Map result = {};
+    Map _result = {};
 
-    if (pa != null) result.addAll({"pa": pa});
-    if (ca != null) result.addAll({"ca": ca});
-    if (aa != null) result.addAll({"aa": aa});
-    if (ta != null) result.addAll({"ta": ta});
-    if (bac != null) result.addAll({"bac": bac});
-    if (pace != null) result.addAll({"pace": pace});
-    if (overallStatus != null) result.addAll({"overallStatus": overallStatus});
+    if (pa != null) _result.addAll({"pa": pa});
+    if (ca != null) _result.addAll({"ca": ca});
+    if (aa != null) _result.addAll({"aa": aa});
+    if (ta != null) _result.addAll({"ta": ta});
+    if (bac != null) _result.addAll({"bac": bac});
+    if (pace != null) _result.addAll({"pace": pace});
+    if (overallStatus != null) _result.addAll({"overallStatus": overallStatus});
 
-    return result;
+    return _result;
   }
 }
 
@@ -1858,7 +1858,7 @@ class VDSNCData {
   String? type;
   int? version;
   String? issuingCountry;
-  dynamic? message;
+  dynamic message;
   String? signatureAlgorithm;
   BytesData? signature;
   BytesData? certificate;
@@ -1887,19 +1887,19 @@ class VDSNCData {
   }
 
   Map toJson(){
-    Map result = {};
+    Map _result = {};
 
-    if (type != null) result.addAll({"type": type});
-    if (version != null) result.addAll({"version": version});
-    if (issuingCountry != null) result.addAll({"issuingCountry": issuingCountry});
-    if (message != null) result.addAll({"message": message});
-    if (signatureAlgorithm != null) result.addAll({"signatureAlgorithm": signatureAlgorithm});
-    if (signature != null) result.addAll({"signature": signature});
-    if (certificate != null) result.addAll({"certificate": certificate});
-    if (certificateChain != null) result.addAll({"certificateChain": certificateChain});
-    if (notifications != null) result.addAll({"notifications": notifications});
+    if (type != null) _result.addAll({"type": type});
+    if (version != null) _result.addAll({"version": version});
+    if (issuingCountry != null) _result.addAll({"issuingCountry": issuingCountry});
+    if (message != null) _result.addAll({"message": message});
+    if (signatureAlgorithm != null) _result.addAll({"signatureAlgorithm": signatureAlgorithm});
+    if (signature != null) _result.addAll({"signature": signature});
+    if (certificate != null) _result.addAll({"certificate": certificate});
+    _result.addAll({"certificateChain": certificateChain});
+    _result.addAll({"notifications": notifications});
 
-    return result;
+    return _result;
   }
 }
 
@@ -1922,14 +1922,14 @@ class BytesData {
   }
 
   Map toJson(){
-    Map result = {};
+    Map _result = {};
 
-    if (data != null) result.addAll({"data": data});
-    if (length != null) result.addAll({"length": length});
-    if (status != null) result.addAll({"status": status});
-    if (type != null) result.addAll({"type": type});
+    if (data != null) _result.addAll({"data": data});
+    if (length != null) _result.addAll({"length": length});
+    if (status != null) _result.addAll({"status": status});
+    if (type != null) _result.addAll({"type": type});
 
-    return result;
+    return _result;
   }
 }
 
@@ -1978,22 +1978,22 @@ class DocumentReaderUvFiberElement {
   }
 
   Map toJson(){
-    Map result = {};
+    Map _result = {};
 
-    if (rectArray != null) result.addAll({"rectArray": rectArray});
-    if (rectCount != null) result.addAll({"rectCount": rectCount});
-    if (expectedCount != null) result.addAll({"expectedCount": expectedCount});
-    if (width != null) result.addAll({"width": width});
-    if (length != null) result.addAll({"length": length});
-    if (area != null) result.addAll({"area": area});
-    if (colorValues != null) result.addAll({"colorValues": colorValues});
-    if (status != null) result.addAll({"status": status});
-    if (elementType != null) result.addAll({"elementType": elementType});
-    if (elementDiagnose != null) result.addAll({"elementDiagnose": elementDiagnose});
-    if (elementTypeName != null) result.addAll({"elementTypeName": elementTypeName});
-    if (elementDiagnoseName != null) result.addAll({"elementDiagnoseName": elementDiagnoseName});
+    _result.addAll({"rectArray": rectArray});
+    if (rectCount != null) _result.addAll({"rectCount": rectCount});
+    if (expectedCount != null) _result.addAll({"expectedCount": expectedCount});
+    _result.addAll({"width": width});
+    _result.addAll({"length": length});
+    _result.addAll({"area": area});
+    _result.addAll({"colorValues": colorValues});
+    if (status != null) _result.addAll({"status": status});
+    if (elementType != null) _result.addAll({"elementType": elementType});
+    if (elementDiagnose != null) _result.addAll({"elementDiagnose": elementDiagnose});
+    if (elementTypeName != null) _result.addAll({"elementTypeName": elementTypeName});
+    if (elementDiagnoseName != null) _result.addAll({"elementDiagnoseName": elementDiagnoseName});
 
-    return result;
+    return _result;
   }
 }
 
@@ -2022,17 +2022,17 @@ class ImageInputData {
   }
 
   Map toJson(){
-    Map result = {};
+    Map _result = {};
 
-    if (pageIndex != null) result.addAll({"pageIndex": pageIndex});
-    if (light != null) result.addAll({"light": light});
-    if (type != null) result.addAll({"type": type});
-    if (width != null) result.addAll({"width": width});
-    if (height != null) result.addAll({"height": height});
-    if (bitmap != null) result.addAll({"bitmap": bitmap});
-    if (imgBytes != null) result.addAll({"imgBytes": imgBytes});
+    if (pageIndex != null) _result.addAll({"pageIndex": pageIndex});
+    if (light != null) _result.addAll({"light": light});
+    if (type != null) _result.addAll({"type": type});
+    if (width != null) _result.addAll({"width": width});
+    if (height != null) _result.addAll({"height": height});
+    if (bitmap != null) _result.addAll({"bitmap": bitmap});
+    if (imgBytes != null) _result.addAll({"imgBytes": imgBytes});
 
-    return result;
+    return _result;
   }
 }
 
@@ -2202,32 +2202,32 @@ class DocumentReaderResults {
   }
 
   Map toJson(){
-    Map result = {};
+    Map _result = {};
 
-    if (chipPage != null) result.addAll({"chipPage": chipPage});
-    if (overallResult != null) result.addAll({"overallResult": overallResult});
-    if (processingFinishedStatus != null) result.addAll({"processingFinishedStatus": processingFinishedStatus});
-    if (elapsedTime != null) result.addAll({"elapsedTime": elapsedTime});
-    if (elapsedTimeRFID != null) result.addAll({"elapsedTimeRFID": elapsedTimeRFID});
-    if (morePagesAvailable != null) result.addAll({"morePagesAvailable": morePagesAvailable});
-    if (rfidResult != null) result.addAll({"rfidResult": rfidResult});
-    if (highResolution != null) result.addAll({"highResolution": highResolution});
-    if (graphicResult != null) result.addAll({"graphicResult": graphicResult});
-    if (textResult != null) result.addAll({"textResult": textResult});
-    if (documentPosition != null) result.addAll({"documentPosition": documentPosition});
-    if (barcodePosition != null) result.addAll({"barcodePosition": barcodePosition});
-    if (mrzPosition != null) result.addAll({"mrzPosition": mrzPosition});
-    if (imageQuality != null) result.addAll({"imageQuality": imageQuality});
-    if (rawResult != null) result.addAll({"rawResult": rawResult});
-    if (documentReaderNotification != null) result.addAll({"documentReaderNotification": documentReaderNotification});
-    if (rfidSessionData != null) result.addAll({"rfidSessionData": rfidSessionData});
-    if (authenticityResult != null) result.addAll({"authenticityResult": authenticityResult});
-    if (barcodeResult != null) result.addAll({"barcodeResult": barcodeResult});
-    if (documentType != null) result.addAll({"documentType": documentType});
-    if (status != null) result.addAll({"status": status});
-    if (vdsncData != null) result.addAll({"vdsncData": vdsncData});
+    if (chipPage != null) _result.addAll({"chipPage": chipPage});
+    if (overallResult != null) _result.addAll({"overallResult": overallResult});
+    if (processingFinishedStatus != null) _result.addAll({"processingFinishedStatus": processingFinishedStatus});
+    if (elapsedTime != null) _result.addAll({"elapsedTime": elapsedTime});
+    if (elapsedTimeRFID != null) _result.addAll({"elapsedTimeRFID": elapsedTimeRFID});
+    if (morePagesAvailable != null) _result.addAll({"morePagesAvailable": morePagesAvailable});
+    if (rfidResult != null) _result.addAll({"rfidResult": rfidResult});
+    if (highResolution != null) _result.addAll({"highResolution": highResolution});
+    if (graphicResult != null) _result.addAll({"graphicResult": graphicResult});
+    if (textResult != null) _result.addAll({"textResult": textResult});
+    _result.addAll({"documentPosition": documentPosition});
+    _result.addAll({"barcodePosition": barcodePosition});
+    _result.addAll({"mrzPosition": mrzPosition});
+    _result.addAll({"imageQuality": imageQuality});
+    if (rawResult != null) _result.addAll({"rawResult": rawResult});
+    if (documentReaderNotification != null) _result.addAll({"documentReaderNotification": documentReaderNotification});
+    if (rfidSessionData != null) _result.addAll({"rfidSessionData": rfidSessionData});
+    if (authenticityResult != null) _result.addAll({"authenticityResult": authenticityResult});
+    if (barcodeResult != null) _result.addAll({"barcodeResult": barcodeResult});
+    _result.addAll({"documentType": documentType});
+    if (status != null) _result.addAll({"status": status});
+    if (vdsncData != null) _result.addAll({"vdsncData": vdsncData});
 
-    return result;
+    return _result;
   }
 }
 
@@ -2305,7 +2305,7 @@ class CaptureMode {
   static const int CAPTURE_FRAME = 2;
 }
 
-class diDocType {
+class DiDocType {
   static const int dtNotDefined = 0;
   static const int dtPassport = 11;
   static const int dtIdentityCard = 12;
@@ -2594,7 +2594,7 @@ class DocumentReaderExceptionEnum {
   static const int FEATURE_BLUETOOTH_LE_NOT_SUPPORTED = 701;
 }
 
-class eCheckDiagnose {
+class ECheckDiagnose {
   static const int UNKNOWN = 0;
   static const int PASS = 1;
   static const int INVALID_INPUT_DATA = 2;
@@ -2690,13 +2690,13 @@ class eCheckDiagnose {
   static const int LAST_DIAGNOSE_VALUE = 190;
 }
 
-class eCheckResult {
+class ECheckResult {
   static const int CH_CHECK_ERROR = 0;
   static const int CH_CHECK_OK = 1;
   static const int CH_CHECK_WAS_NOT_DONE = 2;
 }
 
-class eGraphicFieldType {
+class EGraphicFieldType {
   static const int GF_PORTRAIT = 201;
   static const int GF_FINGERPR = 202;
   static const int GF_EYE = 203;
@@ -2772,7 +2772,7 @@ class eGraphicFieldType {
   }
 }
 
-class eImageQualityCheckType {
+class EImageQualityCheckType {
   static const int IQC_IMAGE_GLARES = 0;
   static const int IQC_IMAGE_FOCUS = 1;
   static const int IQC_IMAGE_RESOLUTION = 2;
@@ -2784,7 +2784,7 @@ class eImageQualityCheckType {
   static const int IQC_HANDWRITTEN = 8;
 }
 
-class eLDS_ParsingErrorCodes {
+class ELDSParsingErrorCodes {
   static const int ERR_LDS_OK = 1;
   static const int ERR_LDS_ASN_INCORRECT_DATA = -2147483647;
   static const int RR_LDS_ASN_NOT_ENOUGH_DATA = -2147483646;
@@ -3174,7 +3174,7 @@ class eLDS_ParsingErrorCodes {
   }
 }
 
-class eLDS_ParsingNotificationCodes {
+class ELDSParsingNotificationCodes {
   static const int NTF_LDS_ASN_CERTIFICATE_INCORRECT_VERSION = -1879048191;
   static const int NTF_LDS_ASN_CERTIFICATE_NON_MATCHING_SIGNATURE_ALGORITHM = -1879048190;
   static const int NTF_LDS_ASN_CERTIFICATE_INCORRECT_TIME_CODING = -1879048189;
@@ -3838,7 +3838,7 @@ class eLDS_ParsingNotificationCodes {
   }
 }
 
-class eProcessGLCommands {
+class EProcessGLCommands {
   static const int ePC_ProcMgr_SetLicense = 12100;
   static const int ePC_ProcMgr_Process = 12101;
   static const int ePC_ProcMgr_ProcessAsync = 12102;
@@ -3851,7 +3851,7 @@ class eProcessGLCommands {
   static const int ePC_ProcMgr_ComparePortraits = 12111;
 }
 
-class eRequestCommand {
+class ERequestCommand {
   static const int eReqCmd_RFid_SendData = 100;
   static const int eReqCmd_RFid_Notify = 101;
   static const int eReqCmd_RFid_GetDataForScenario = 102;
@@ -3860,7 +3860,7 @@ class eRequestCommand {
   static const int eReqCmd_GetGuid = 400;
 }
 
-class eRFID_AccessControl_ProcedureType {
+class ERFIDAccessControlProcedureType {
   static const int ACPT_UNDEFINED = 0;
   static const int ACPT_BAC = 1;
   static const int ACPT_PACE = 2;
@@ -3871,21 +3871,21 @@ class eRFID_AccessControl_ProcedureType {
   static const int ACPT_CARD_INFO = 10;
 }
 
-class eRFID_AuthenticationProcedureType {
+class ERFIDAuthenticationProcedureType {
   static const int aptUndefined = 0;
   static const int aptStandard = 1;
   static const int aptAdvanced = 2;
   static const int aptGeneral = 3;
 }
 
-class eRFID_BaudRate {
+class ERFIDBaudRate {
   static const int rfbr_106 = 1;
   static const int rfbr_212 = 2;
   static const int rfbr_424 = 4;
   static const int rfbr_848 = 8;
 }
 
-class eRFID_CertificateType {
+class ERFIDCertificateType {
   static const int CT_UNDEFINED = 0;
   static const int CT_CSCA = 1;
   static const int CT_CSCA_LINK = 2;
@@ -3899,7 +3899,7 @@ class eRFID_CertificateType {
   static const int CT_BCSNC = 10;
 }
 
-class eRFID_DataFile_Type {
+class ERFIDDataFileType {
   static const int DFT_UNSPECIFIED = 0;
   static const int DFT_PASSPORT_DG1 = 1;
   static const int DFT_PASSPORT_DG2 = 2;
@@ -4154,7 +4154,7 @@ class eRFID_DataFile_Type {
   }
 }
 
-class eRFID_ErrorCodes {
+class ERFIDErrorCodes {
   static const int RFID_ERROR_NO_ERROR = 1;
   static const int RFID_ERROR_ALREADY_DONE = 2;
   static const int RFID_ERROR_FAILED = -1;
@@ -4506,7 +4506,7 @@ class eRFID_ErrorCodes {
   }
 }
 
-class eRFID_NotificationCodes {
+class ERFIDNotificationCodes {
   static const int RFID_NOTIFICATION_ERROR = 65536;
   static const int RFID_NOTIFICATION_DOCUMENT_READY = 65537;
   static const int RFID_NOTIFICATION_READ_PROTOCOL4 = 65539;
@@ -4545,7 +4545,7 @@ class eRFID_NotificationCodes {
   static const int RFID_NOTIFICATION_BIOMETRICS_EMPTY_PLACEHOLDER = 983040;
 }
 
-class eRFID_Password_Type {
+class ERFIDPasswordType {
   static const int PPT_UNKNOWN = 0;
   static const int PPT_MRZ = 1;
   static const int PPT_CAN = 2;
@@ -4555,12 +4555,12 @@ class eRFID_Password_Type {
   static const int PPT_SAI = 6;
 }
 
-class eRFID_SDK_ProfilerType {
+class ERFIDSDKProfilerType {
   static const int SPT_DOC_9303_EDITION_2006 = 0x00000001;
   static const int SPT_DOC_9303_LDS_PKI_MAINTENANCE = 0x00000002;
 }
 
-class eRFID_TerminalType {
+class ERFIDTerminalType {
   static const int TET_UNDEFINED = 0;
   static const int TET_INSPECTION_SYSTEM = 1;
   static const int TET_AUTHENTICATION_TERMINAL = 2;
@@ -4568,7 +4568,7 @@ class eRFID_TerminalType {
   static const int TET_UNAUTHENTICATED_TERMINAL = 4;
 }
 
-class eRPRM_Authenticity {
+class ERPRMAuthenticity {
   static const int NONE = 0;
   static const int UV_LUMINESCENCE = 1;
   static const int IR_B900 = 2;
@@ -4587,7 +4587,7 @@ class eRPRM_Authenticity {
   static const int HOLOGRAMS_DETECTION = 524288;
 }
 
-class eRPRM_FieldVerificationResult {
+class ERPRMFieldVerificationResult {
   static const int RCF_DISABLED = 0;
   static const int RCF_VERIFIED = 1;
   static const int RCF_NOT_VERIFIED = 2;
@@ -4595,7 +4595,7 @@ class eRPRM_FieldVerificationResult {
   static const int RCF_COMPARE_FALSE = 4;
 }
 
-class eRPRM_Lights {
+class ERPRMLights {
   static const int NONE = 0;
   static const int RPRM_LIGHT_UV = 128;
   static const int RPRM_LIGHT_WHITE_FULL = 6;
@@ -4619,7 +4619,7 @@ class eRPRM_Lights {
   }
 }
 
-class eRPRM_ResultType {
+class ERPRMResultType {
   static const int NONE = -1;
   static const int RPRM_RESULT_TYPE_EMPTY = 0;
   static const int RPRM_RESULT_TYPE_RAW_IMAGE = 1;
@@ -4659,7 +4659,7 @@ class eRPRM_ResultType {
   static const int RPRM_RESULT_TYPE_STATUS = 33;
 }
 
-class eRPRM_SecurityFeatureType {
+class ERPRMSecurityFeatureType {
   static const int NONE = -1;
   static const int SECURITY_FEATURE_TYPE_BLANK = 0;
   static const int SECURITY_FEATURE_TYPE_FILL = 1;
@@ -4692,7 +4692,7 @@ class eRPRM_SecurityFeatureType {
   static const int DOCUMENT_CANCELLING_DETECTOR = 28;
 }
 
-class eSignManagementAction {
+class ESignManagementAction {
   static const int smaUndefined = 0;
   static const int smaCreatePIN = 1;
   static const int smaChangePIN = 2;
@@ -4703,7 +4703,7 @@ class eSignManagementAction {
   static const int smaSignData = 7;
 }
 
-class eVisualFieldType {
+class EVisualFieldType {
   static const int FT_DOCUMENT_CLASS_CODE = 0;
   static const int FT_ISSUING_STATE_CODE = 1;
   static const int FT_DOCUMENT_NUMBER = 2;
@@ -6964,6 +6964,15 @@ class LCID {
   }
 }
 
+class MRZFormat {
+  static const String FORMAT_1X30 = "1x30";
+  static const String FORMAT_3X30 = "3x30";
+  static const String FORMAT_2X36 = "2x36";
+  static const String FORMAT_2X44 = "2x44";
+  static const String FORMAT_1X6 = "1x6";
+  static const String FORMAT_2X30 = "2x30";
+}
+
 class PKDResourceType {
   static const int CERTIFICATE_PA = 0;
   static const int CERTIFICATE_TA = 1;
@@ -7282,8 +7291,8 @@ class DocumentReader {
     return await _channel.invokeMethod("setRfidScenario", [scenario]);
   }
 
-  static Future<dynamic> initializeReader(license) async {
-    return await _channel.invokeMethod("initializeReader", [license]);
+  static Future<dynamic> initializeReader(config) async {
+    return await _channel.invokeMethod("initializeReader", [config]);
   }
 
   static Future<dynamic> prepareDatabase(databaseType) async {
@@ -7292,6 +7301,10 @@ class DocumentReader {
 
   static Future<dynamic> recognizeImage(image) async {
     return await _channel.invokeMethod("recognizeImage", [image]);
+  }
+
+  static Future<dynamic> recognizeData(data) async {
+    return await _channel.invokeMethod("recognizeData", [data]);
   }
 
   static Future<dynamic> setRfidSessionStatus(status) async {
@@ -7306,8 +7319,8 @@ class DocumentReader {
     return await _channel.invokeMethod("provideTACertificates", [certificates]);
   }
 
-  static Future<dynamic> provideTASignature(certificates) async {
-    return await _channel.invokeMethod("provideTASignature", [certificates]);
+  static Future<dynamic> provideTASignature(signature) async {
+    return await _channel.invokeMethod("provideTASignature", [signature]);
   }
 
   static Future<dynamic> parseCoreResults(json) async {
@@ -7316,10 +7329,6 @@ class DocumentReader {
 
   static Future<dynamic> setTCCParams(params) async {
     return await _channel.invokeMethod("setTCCParams", [params]);
-  }
-
-  static Future<dynamic> initializeReaderWithDatabase(license, db) async {
-    return await _channel.invokeMethod("initializeReaderWithDatabase", [license, db]);
   }
 
   static Future<dynamic> recognizeImageWithOpts(image, options) async {

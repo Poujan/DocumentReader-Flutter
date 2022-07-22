@@ -135,9 +135,9 @@ class _MyAppState extends State<MyApp> {
 
   updateRfidUI(results) {
     if (results.code ==
-        eRFID_NotificationCodes.RFID_NOTIFICATION_PCSC_READING_DATAGROUP)
+        ERFIDNotificationCodes.RFID_NOTIFICATION_PCSC_READING_DATAGROUP)
       setState(() =>
-          rfidDescription = eRFID_DataFile_Type.getTranslation(results.number));
+          rfidDescription = ERFIDDataFileType.getTranslation(results.number));
     setState(() {
       rfidUIHeader = "Reading RFID";
       rfidUIHeaderColor = Colors.black;
@@ -154,7 +154,6 @@ class _MyAppState extends State<MyApp> {
   }
 
   usualRFID() {
-    setState(() => _doRfid = false);
     DocumentReader.startRFIDReader();
   }
 
@@ -162,8 +161,11 @@ class _MyAppState extends State<MyApp> {
     print(await DocumentReader.prepareDatabase("Full"));
     setStatus("Initializing...");
     ByteData byteData = await rootBundle.load("assets/regula.license");
-    print(await DocumentReader.initializeReader(base64.encode(byteData.buffer
-        .asUint8List(byteData.offsetInBytes, byteData.lengthInBytes))));
+    print(await DocumentReader.initializeReader({
+      "license": base64.encode(byteData.buffer
+          .asUint8List(byteData.offsetInBytes, byteData.lengthInBytes)),
+      "delayedNNLoad": true
+    }));
     setStatus("Ready");
     bool canRfid = await DocumentReader.isRFIDAvailableForUse();
     setState(() => _canRfid = canRfid);
@@ -196,7 +198,7 @@ class _MyAppState extends State<MyApp> {
   displayResults(DocumentReaderResults results) {
     setState(() {
       _status = results.getTextFieldValueByType(
-              eVisualFieldType.FT_SURNAME_AND_GIVEN_NAMES) ??
+              EVisualFieldType.FT_SURNAME_AND_GIVEN_NAMES) ??
           "";
       _docImage = Image.asset('assets/images/id.png');
       _portrait = Image.asset('assets/images/portrait.png');
@@ -204,14 +206,14 @@ class _MyAppState extends State<MyApp> {
         _docImage = Image.memory(Uri.parse("data:image/png;base64," +
                 results
                     .getGraphicFieldImageByType(
-                        eGraphicFieldType.GF_DOCUMENT_IMAGE)
+                        EGraphicFieldType.GF_DOCUMENT_IMAGE)
                     .replaceAll('\n', ''))
             .data
             .contentAsBytes());
       if (results.getGraphicFieldImageByType(201) != null)
         _portrait = Image.memory(Uri.parse("data:image/png;base64," +
                 results
-                    .getGraphicFieldImageByType(eGraphicFieldType.GF_PORTRAIT)
+                    .getGraphicFieldImageByType(EGraphicFieldType.GF_PORTRAIT)
                     .replaceAll('\n', ''))
             .data
             .contentAsBytes());
