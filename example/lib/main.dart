@@ -28,6 +28,7 @@ class _MyAppState extends State<MyApp> {
 
   Object setStatus(String s) => {setState(() => _status = s)};
   String _status = "Loading...";
+  bool isReadingRfidCustomUi = false;
   bool isReadingRfid = false;
   String rfidUIHeader = "Reading RFID";
   Color rfidUIHeaderColor = Colors.black;
@@ -88,13 +89,14 @@ class _MyAppState extends State<MyApp> {
   }
 
   void handleCompletion(DocumentReaderCompletion completion) {
-    if (isReadingRfid &&
+    if (isReadingRfidCustomUi &&
         (completion.action == DocReaderAction.CANCEL ||
             completion.action == DocReaderAction.ERROR)) this.hideRfidUI();
-    if (isReadingRfid && completion.action == DocReaderAction.NOTIFICATION)
+    if (isReadingRfidCustomUi &&
+        completion.action == DocReaderAction.NOTIFICATION)
       this.updateRfidUI(completion.results.documentReaderNotification);
     if (completion.action ==
-        DocReaderAction.COMPLETE) if (isReadingRfid) if (completion
+        DocReaderAction.COMPLETE) if (isReadingRfidCustomUi) if (completion
             .results.rfidResult !=
         1)
       this.restartRfidUI();
@@ -106,11 +108,13 @@ class _MyAppState extends State<MyApp> {
       this.handleResults(completion.results);
     if (completion.action == DocReaderAction.TIMEOUT)
       this.handleResults(completion.results);
+    if (completion.action == DocReaderAction.CANCEL ||
+        completion.action == DocReaderAction.ERROR) isReadingRfid = false;
   }
 
   void showRfidUI() {
     // show animation
-    setState(() => isReadingRfid = true);
+    setState(() => isReadingRfidCustomUi = true);
   }
 
   hideRfidUI() {
@@ -118,7 +122,7 @@ class _MyAppState extends State<MyApp> {
     this.restartRfidUI();
     DocumentReader.stopRFIDReader();
     setState(() {
-      isReadingRfid = false;
+      isReadingRfidCustomUi = false;
       rfidUIHeader = "Reading RFID";
       rfidUIHeaderColor = Colors.black;
     });
@@ -154,6 +158,7 @@ class _MyAppState extends State<MyApp> {
   }
 
   usualRFID() {
+    isReadingRfid = true;
     DocumentReader.startRFIDReader();
   }
 
@@ -231,11 +236,13 @@ class _MyAppState extends State<MyApp> {
   }
 
   void handleResults(DocumentReaderResults results) {
-    if (_doRfid && results != null && results.chipPage != 0) {
+    if (_doRfid && !isReadingRfid && results != null && results.chipPage != 0) {
       // customRFID();
       usualRFID();
-    } else
+    } else {
+      isReadingRfid = false;
       displayResults(results);
+    }
   }
 
   void onChangeRfid(bool value) {
@@ -296,7 +303,7 @@ class _MyAppState extends State<MyApp> {
           body: Column(mainAxisAlignment: MainAxisAlignment.center, children: <
               Widget>[
             Visibility(
-                visible: isReadingRfid,
+                visible: isReadingRfidCustomUi,
                 child: Expanded(
                     child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -329,7 +336,7 @@ class _MyAppState extends State<MyApp> {
                       ),
                     ]))),
             Visibility(
-                visible: !isReadingRfid,
+                visible: !isReadingRfidCustomUi,
                 child: Expanded(
                     child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
