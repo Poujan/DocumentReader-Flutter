@@ -2119,40 +2119,41 @@ class DocumentReaderResults {
     return null;
   }
 
-    String? getContainers(List<int> resultTypes) {
-      try {
-        if(this.rawResult == null) return null;
-        Map<String, dynamic> json = jsonDecode(this.rawResult!);
-        List<dynamic> containerList = json["List"];
-        List<dynamic> resultArray = [];
-        for (Map<String, dynamic> container in containerList){
-          if (container == null || container.length == 0)
-            continue;
-          for (int resultType in resultTypes)
-            if(resultType == container["result_type"]){
-              resultArray.add(container);
-              break;
-            }
-        }
-        if (resultArray.length == 0)
-          return null;
-        Map<String, dynamic> newContainerList = {};
-        newContainerList["List"] = resultArray;
-        Map<String, dynamic> newJson = {};
-        newJson["ContainerList"] = newContainerList;
-        newJson["TransactionInfo"] = json["TransactionInfo"];
-      } catch (error) {
-        return null;
+  String? getContainers(List<int> resultTypes) {
+    try {
+      if(this.rawResult == null) return null;
+      Map<String, dynamic> json = jsonDecode(this.rawResult!);
+      List<dynamic> containerList = json["List"];
+      List<dynamic> resultArray = [];
+      for (Map<String, dynamic>? container in containerList){
+        if (container == null || container.length == 0)
+          continue;
+        for (int resultType in resultTypes)
+          if(resultType == container["result_type"]){
+            resultArray.add(container);
+            break;
+          }
       }
+      if (resultArray.length == 0)
+        return null;
+      Map<String, dynamic> newContainerList = {};
+      newContainerList["List"] = resultArray;
+      Map<String, dynamic> newJson = {};
+      newJson["ContainerList"] = newContainerList;
+      newJson["TransactionInfo"] = json["TransactionInfo"];
+    } catch (error) {
+      return null;
     }
+    return null;
+  }
 
-    String? getEncryptedContainers() {
-        return this.getContainers([
-            ERPRMResultType.RPRM_RESULT_TYPE_INTERNAL_RFID_SESSION,
-            ERPRMResultType.RPRM_RESULT_TYPE_INTERNAL_ENCRYPTED_RCL,
-            ERPRMResultType.RPRM_RESULT_TYPE_INTERNAL_LICENSE
-        ]);
-    }
+  String? getEncryptedContainers() {
+      return this.getContainers([
+          ERPRMResultType.RPRM_RESULT_TYPE_INTERNAL_RFID_SESSION,
+          ERPRMResultType.RPRM_RESULT_TYPE_INTERNAL_ENCRYPTED_RCL,
+          ERPRMResultType.RPRM_RESULT_TYPE_INTERNAL_LICENSE
+      ]);
+  }
 
   static DocumentReaderResults? fromJson(jsonObject) {
     if (jsonObject == null) return null;
