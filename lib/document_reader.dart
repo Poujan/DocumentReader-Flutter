@@ -7152,6 +7152,18 @@ class DocumentReader {
     return await _channel.invokeMethod("initializeReaderAutomatically", []);
   }
 
+  static Future<dynamic> isBlePermissionsGranted() async {
+    return await _channel.invokeMethod("isBlePermissionsGranted", []);
+  }
+
+  static Future<dynamic> startBluetoothService() async {
+    return await _channel.invokeMethod("startBluetoothService", []);
+  }
+
+  static Future<dynamic> initializeReaderDevice7310Config() async {
+    return await _channel.invokeMethod("initializeReaderDevice7310Config", []);
+  }
+
   static Future<dynamic> getAPIVersion() async {
     return await _channel.invokeMethod("getAPIVersion", []);
   }
