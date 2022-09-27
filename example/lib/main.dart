@@ -268,8 +268,10 @@ class _MyAppState extends State<MyApp> {
       padding: EdgeInsets.fromLTRB(5, 0, 5, 0),
       transform: Matrix4.translationValues(0, -7.5, 0),
       child: TextButton(
-          style: TextButton.styleFrom(
-              backgroundColor: Color.fromARGB(50, 10, 10, 10)),
+            style: ButtonStyle(
+              foregroundColor: MaterialStateProperty.all<Color>(Colors.blue),
+              backgroundColor: MaterialStateProperty.all<Color>(Colors.black12),
+            ),
           onPressed: onPress,
           child: Text(text)),
       width: 150,

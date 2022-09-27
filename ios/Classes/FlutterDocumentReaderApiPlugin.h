@@ -22,15 +22,6 @@
 @interface RFIDNotificationCompletionStreamHandler : NSObject <FlutterStreamHandler>
 @end
 
-@interface BleOnServiceConnectedStreamHandler : NSObject <FlutterStreamHandler>
-@end
-
-@interface BleOnServiceDisconnectedStreamHandler : NSObject <FlutterStreamHandler>
-@end
-
-@interface BleOnDeviceReadyStreamHandler : NSObject <FlutterStreamHandler>
-@end
-
 @interface PACertificateCompletionStreamHandler : NSObject <FlutterStreamHandler>
 @end
 

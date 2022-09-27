@@ -1,5 +1,4 @@
 apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 33
@@ -23,7 +22,7 @@ rootProject.allprojects {
 }
 
 dependencies {
-    implementation('com.regula.documentreader:api:6.5.7488') {
+    implementation('com.regula.documentreader:api:6.6.7582') {
         transitive = true
     }
 }
