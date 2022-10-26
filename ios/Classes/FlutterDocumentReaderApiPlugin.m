@@ -4,9 +4,15 @@ FlutterEventSink completionEvent;
 FlutterEventSink databaseProgressEvent;
 FlutterEventSink videoEncoderCompletionEvent;
 FlutterEventSink rfidNotificationCompletionEvent;
+
+FlutterEventSink bleOnServiceConnectedEvent;
+FlutterEventSink bleOnServiceDisconnectedEvent;
+FlutterEventSink bleOnDeviceReadyEvent;
+
 FlutterEventSink paCertificateCompletionEvent;
 FlutterEventSink taCertificateCompletionEvent;
 FlutterEventSink taSignatureCompletionEvent;
+
 RGLRFIDCertificatesCallback paCertificateCompletion;
 RGLRFIDCertificatesCallback taCertificateCompletion;
 RFIDDelegateNoPA* rfidDelegateNoPA;
@@ -93,6 +99,42 @@ RGLRFIDSignatureCallback taSignatureCompletion;
 
 - (FlutterError*)onCancelWithArguments:(id)arguments {
     taSignatureCompletionEvent = nil;
+  return nil;
+}
+@end
+
+@implementation BleOnServiceConnectedStreamHandler
+- (FlutterError*)onListenWithArguments:(id)arguments eventSink:(FlutterEventSink)eventSink {
+    bleOnServiceConnectedEvent = eventSink;
+  return nil;
+}
+
+- (FlutterError*)onCancelWithArguments:(id)arguments {
+    bleOnServiceConnectedEvent = nil;
+  return nil;
+}
+@end
+
+@implementation BleOnServiceDisconnectedStreamHandler
+- (FlutterError*)onListenWithArguments:(id)arguments eventSink:(FlutterEventSink)eventSink {
+    bleOnServiceDisconnectedEvent = eventSink;
+  return nil;
+}
+
+- (FlutterError*)onCancelWithArguments:(id)arguments {
+    bleOnServiceDisconnectedEvent = nil;
+  return nil;
+}
+@end
+
+@implementation BleOnDeviceReadyStreamHandler
+- (FlutterError*)onListenWithArguments:(id)arguments eventSink:(FlutterEventSink)eventSink {
+    bleOnDeviceReadyEvent = eventSink;
+  return nil;
+}
+
+- (FlutterError*)onCancelWithArguments:(id)arguments {
+    bleOnDeviceReadyEvent = nil;
   return nil;
 }
 @end
@@ -213,9 +255,14 @@ typedef void (^Callback)(NSString* response);
     [[FlutterEventChannel eventChannelWithName:@"flutter_document_reader_api/event/video_encoder_completion" binaryMessenger:[registrar messenger]] setStreamHandler:[VideoEncoderCompletionStreamHandler new]];
     [[FlutterEventChannel eventChannelWithName:@"flutter_document_reader_api/event/database_progress" binaryMessenger:[registrar messenger]] setStreamHandler:[DatabaseProgressStreamHandler new]];
     [[FlutterEventChannel eventChannelWithName:@"flutter_document_reader_api/event/rfid_notification_completion" binaryMessenger:[registrar messenger]] setStreamHandler:[RFIDNotificationCompletionStreamHandler new]];
+
     [[FlutterEventChannel eventChannelWithName:@"flutter_document_reader_api/event/pa_certificate_completion" binaryMessenger:[registrar messenger]] setStreamHandler:[PACertificateCompletionStreamHandler new]];
     [[FlutterEventChannel eventChannelWithName:@"flutter_document_reader_api/event/ta_certificate_completion" binaryMessenger:[registrar messenger]] setStreamHandler:[TACertificateCompletionStreamHandler new]];
     [[FlutterEventChannel eventChannelWithName:@"flutter_document_reader_api/event/ta_signature_completion" binaryMessenger:[registrar messenger]] setStreamHandler:[TASignatureCompletionStreamHandler new]];
+
+    [[FlutterEventChannel eventChannelWithName:@"flutter_document_reader_api/event/bleOnServiceConnectedEvent" binaryMessenger:[registrar messenger]] setStreamHandler:[BleOnServiceConnectedStreamHandler new]];
+    [[FlutterEventChannel eventChannelWithName:@"flutter_document_reader_api/event/bleOnServiceDisconnectedEvent" binaryMessenger:[registrar messenger]] setStreamHandler:[BleOnServiceDisconnectedStreamHandler new]];
+    [[FlutterEventChannel eventChannelWithName:@"flutter_document_reader_api/event/bleOnDeviceReadyEvent" binaryMessenger:[registrar messenger]] setStreamHandler:[BleOnDeviceReadyStreamHandler new]];
 
     FlutterMethodChannel* channel = [FlutterMethodChannel methodChannelWithName:@"flutter_document_reader_api/method" binaryMessenger:[registrar messenger]];
     [FlutterDocumentReaderApiPlugin setChannel:channel];
@@ -236,6 +283,12 @@ typedef void (^Callback)(NSString* response);
 
     if([action isEqualToString:@"initializeReaderAutomatically"])
         [self initializeReaderAutomatically :successCallback :errorCallback];
+    else if([action isEqualToString:@"isBlePermissionsGranted"])
+        [self isBlePermissionsGranted :successCallback :errorCallback];
+    else if([action isEqualToString:@"startBluetoothService"])
+        [self startBluetoothService :successCallback :errorCallback];
+    else if([action isEqualToString:@"initializeReaderDevice7310Config"])
+        [self initializeReaderDevice7310Config :successCallback :errorCallback];
     else if([action isEqualToString:@"getAPIVersion"])
         [self getAPIVersion :successCallback :errorCallback];
     else if([action isEqualToString:@"getAvailableScenarios"])
@@ -366,6 +419,18 @@ typedef void (^Callback)(NSString* response);
     NSString *dataPath = [[NSBundle mainBundle] pathForResource:@"regula.license" ofType:nil];
     NSData *licenseData = [NSData dataWithContentsOfFile:dataPath];
     [RGLDocReader.shared initializeReaderWithConfig:[RGLConfig configWithLicenseData:licenseData] completion:[self getInitCompletion :successCallback :errorCallback]];
+}
+
+- (void) isBlePermissionsGranted:(Callback)successCallback :(Callback)errorCallback{
+    [self result:@"isBlePermissionsGranted() is an android-only method" :errorCallback];
+}
+
+- (void) startBluetoothService:(Callback)successCallback :(Callback)errorCallback{
+    [self result:@"startBluetoothService() is an android-only method" :errorCallback];
+}
+
+- (void) initializeReaderDevice7310Config:(Callback)successCallback :(Callback)errorCallback{
+    [self result:@"initializeReaderDevice7310Config() is an android-only method" :errorCallback];
 }
 
 - (void) resetConfiguration:(Callback)successCallback :(Callback)errorCallback{

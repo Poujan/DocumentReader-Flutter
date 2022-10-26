@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 33
@@ -15,14 +16,11 @@ rootProject.allprojects {
         maven {
             url "https://maven.regulaforensics.com/RegulaDocumentReader"
         }
-        maven {
-            url "https://maven.regulaforensics.com/RegulaDocumentReader/Beta"
-        }
     }
 }
 
 dependencies {
-    implementation('com.regula.documentreader:api:6.6.7582') {
+    implementation('com.regula.documentreader:api:') {
         transitive = true
     }
 }
