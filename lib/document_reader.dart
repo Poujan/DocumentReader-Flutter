@@ -1490,22 +1490,14 @@ class RfidNotificationCompletion {
 
 class DocumentReaderException {
   int? errorCode;
-  String? localizedMessage;
   String? message;
-  String? string;
-  List<StackTraceElement?> stackTrace = [];
 
   static DocumentReaderException? fromJson(jsonObject) {
     if (jsonObject == null) return null;
     var result = new DocumentReaderException();
 
     result.errorCode = jsonObject["errorCode"];
-    result.localizedMessage = jsonObject["localizedMessage"];
     result.message = jsonObject["message"];
-    result.string = jsonObject["string"];
-    if (jsonObject["stackTrace"] != null)
-      for (var item in jsonObject["stackTrace"])
-        result.stackTrace.add(StackTraceElement.fromJson(item));
 
     return result;
   }
@@ -1514,81 +1506,7 @@ class DocumentReaderException {
     Map _result = {};
 
     if (errorCode != null) _result.addAll({"errorCode": errorCode});
-    if (localizedMessage != null)
-      _result.addAll({"localizedMessage": localizedMessage});
     if (message != null) _result.addAll({"message": message});
-    if (string != null) _result.addAll({"string": string});
-    _result.addAll({"stackTrace": stackTrace});
-
-    return _result;
-  }
-}
-
-class Throwable {
-  String? localizedMessage;
-  String? message;
-  String? string;
-  List<StackTraceElement?> stackTrace = [];
-
-  static Throwable? fromJson(jsonObject) {
-    if (jsonObject == null) return null;
-    var result = new Throwable();
-
-    result.localizedMessage = jsonObject["localizedMessage"];
-    result.message = jsonObject["message"];
-    result.string = jsonObject["string"];
-    if (jsonObject["stackTrace"] != null)
-      for (var item in jsonObject["stackTrace"])
-        result.stackTrace.add(StackTraceElement.fromJson(item));
-
-    return result;
-  }
-
-  Map toJson() {
-    Map _result = {};
-
-    if (localizedMessage != null)
-      _result.addAll({"localizedMessage": localizedMessage});
-    if (message != null) _result.addAll({"message": message});
-    if (string != null) _result.addAll({"string": string});
-    _result.addAll({"stackTrace": stackTrace});
-
-    return _result;
-  }
-}
-
-class StackTraceElement {
-  int? lineNumber;
-  bool? isNativeMethod;
-  String? className;
-  String? fileName;
-  String? methodName;
-  String? string;
-
-  static StackTraceElement? fromJson(jsonObject) {
-    if (jsonObject == null) return null;
-    var result = new StackTraceElement();
-
-    result.lineNumber = jsonObject["lineNumber"];
-    result.isNativeMethod = jsonObject["isNativeMethod"];
-    result.className = jsonObject["className"];
-    result.fileName = jsonObject["fileName"];
-    result.methodName = jsonObject["methodName"];
-    result.string = jsonObject["string"];
-
-    return result;
-  }
-
-  Map toJson() {
-    Map _result = {};
-
-    if (lineNumber != null) _result.addAll({"lineNumber": lineNumber});
-    if (isNativeMethod != null)
-      _result.addAll({"isNativeMethod": isNativeMethod});
-    if (className != null) _result.addAll({"className": className});
-    if (fileName != null) _result.addAll({"fileName": fileName});
-    if (methodName != null) _result.addAll({"methodName": methodName});
-    if (string != null) _result.addAll({"string": string});
 
     return _result;
   }
@@ -1935,69 +1853,6 @@ class BytesData {
     if (length != null) _result.addAll({"length": length});
     if (status != null) _result.addAll({"status": status});
     if (type != null) _result.addAll({"type": type});
-
-    return _result;
-  }
-}
-
-class DocumentReaderUvFiberElement {
-  List<DocReaderFieldRect?> rectArray = [];
-  int? rectCount;
-  int? expectedCount;
-  List<int?> width = [];
-  List<int?> length = [];
-  List<int?> area = [];
-  List<int?> colorValues = [];
-  int? status;
-  int? elementType;
-  int? elementDiagnose;
-  String? elementTypeName;
-  String? elementDiagnoseName;
-
-  static DocumentReaderUvFiberElement? fromJson(jsonObject) {
-    if (jsonObject == null) return null;
-    var result = new DocumentReaderUvFiberElement();
-
-    if (jsonObject["rectArray"] != null)
-      for (var item in jsonObject["rectArray"])
-        result.rectArray.add(DocReaderFieldRect.fromJson(item));
-    result.rectCount = jsonObject["rectCount"];
-    result.expectedCount = jsonObject["expectedCount"];
-    if (jsonObject["width"] != null)
-      for (var item in jsonObject["width"]) result.width.add(item);
-    if (jsonObject["length"] != null)
-      for (var item in jsonObject["length"]) result.length.add(item);
-    if (jsonObject["area"] != null)
-      for (var item in jsonObject["area"]) result.area.add(item);
-    if (jsonObject["colorValues"] != null)
-      for (var item in jsonObject["colorValues"]) result.colorValues.add(item);
-    result.status = jsonObject["status"];
-    result.elementType = jsonObject["elementType"];
-    result.elementDiagnose = jsonObject["elementDiagnose"];
-    result.elementTypeName = jsonObject["elementTypeName"];
-    result.elementDiagnoseName = jsonObject["elementDiagnoseName"];
-
-    return result;
-  }
-
-  Map toJson() {
-    Map _result = {};
-
-    _result.addAll({"rectArray": rectArray});
-    if (rectCount != null) _result.addAll({"rectCount": rectCount});
-    if (expectedCount != null) _result.addAll({"expectedCount": expectedCount});
-    _result.addAll({"width": width});
-    _result.addAll({"length": length});
-    _result.addAll({"area": area});
-    _result.addAll({"colorValues": colorValues});
-    if (status != null) _result.addAll({"status": status});
-    if (elementType != null) _result.addAll({"elementType": elementType});
-    if (elementDiagnose != null)
-      _result.addAll({"elementDiagnose": elementDiagnose});
-    if (elementTypeName != null)
-      _result.addAll({"elementTypeName": elementTypeName});
-    if (elementDiagnoseName != null)
-      _result.addAll({"elementDiagnoseName": elementDiagnoseName});
 
     return _result;
   }
