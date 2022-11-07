@@ -211,7 +211,7 @@ class _MyAppState extends State<MyApp> {
           "";
 
       _docImage = Image.asset('assets/images/id.png');
-     
+
       if (results.getGraphicFieldImageByType(207) != null)
         _docImage = Image.memory(Uri.parse("data:image/png;base64," +
                 results
@@ -223,15 +223,15 @@ class _MyAppState extends State<MyApp> {
       _portrait = Image.asset('assets/images/id.png');
       if (results.getGraphicFieldImageByType != null)
         _portrait = Image.memory(Uri.parse("data:image/png;base64," +
-                results
-                    .getGraphicFieldImageByType(EGraphicFieldType.GF_DOCUMENT_IMAGE))
+                results.getGraphicFieldImageByType(
+                    EGraphicFieldType.GF_DOCUMENT_IMAGE))
             .data
             .contentAsBytes());
 
       for (var textField in results.textResult.fields) {
         for (var value in textField.values) {
           print(textField.fieldName +
-              ', value: ' +
+              ', values: ' +
               value.value +
               ', source: ' +
               value.sourceType.toString());
